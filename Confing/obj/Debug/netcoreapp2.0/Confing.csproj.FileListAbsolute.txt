@@ -1,0 +1,9 @@
+H:\project\NH.Core\Confing\bin\Debug\netcoreapp2.0\sqlconfig\sqlserver.cfg.xml
+H:\project\NH.Core\Confing\bin\Debug\netcoreapp2.0\Confing.deps.json
+H:\project\NH.Core\Confing\bin\Debug\netcoreapp2.0\Confing.dll
+H:\project\NH.Core\Confing\bin\Debug\netcoreapp2.0\Confing.pdb
+H:\project\NH.Core\Confing\obj\Debug\netcoreapp2.0\Confing.csproj.CoreCompileInputs.cache
+H:\project\NH.Core\Confing\obj\Debug\netcoreapp2.0\Confing.AssemblyInfoInputs.cache
+H:\project\NH.Core\Confing\obj\Debug\netcoreapp2.0\Confing.AssemblyInfo.cs
+H:\project\NH.Core\Confing\obj\Debug\netcoreapp2.0\Confing.dll
+H:\project\NH.Core\Confing\obj\Debug\netcoreapp2.0\Confing.pdb

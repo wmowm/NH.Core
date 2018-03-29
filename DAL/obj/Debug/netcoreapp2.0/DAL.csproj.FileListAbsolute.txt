@@ -1,0 +1,16 @@
+H:\project\NH.Core\DAL\obj\Debug\netcoreapp2.0\DAL.csprojResolveAssemblyReference.cache
+H:\project\NH.Core\DAL\obj\Debug\netcoreapp2.0\DAL.csproj.CoreCompileInputs.cache
+H:\project\NH.Core\DAL\obj\Debug\netcoreapp2.0\DAL.AssemblyInfoInputs.cache
+H:\project\NH.Core\DAL\obj\Debug\netcoreapp2.0\DAL.AssemblyInfo.cs
+H:\project\NH.Core\DAL\bin\Debug\netcoreapp2.0\DAL.deps.json
+H:\project\NH.Core\DAL\bin\Debug\netcoreapp2.0\DAL.dll
+H:\project\NH.Core\DAL\bin\Debug\netcoreapp2.0\Common.dll
+H:\project\NH.Core\DAL\bin\Debug\netcoreapp2.0\Domain.dll
+H:\project\NH.Core\DAL\bin\Debug\netcoreapp2.0\IDAL.dll
+H:\project\NH.Core\DAL\bin\Debug\netcoreapp2.0\Common.pdb
+H:\project\NH.Core\DAL\bin\Debug\netcoreapp2.0\Domain.pdb
+H:\project\NH.Core\DAL\bin\Debug\netcoreapp2.0\IDAL.pdb
+H:\project\NH.Core\DAL\obj\Debug\netcoreapp2.0\DAL.csproj.CopyComplete
+H:\project\NH.Core\DAL\bin\Debug\netcoreapp2.0\DAL.pdb
+H:\project\NH.Core\DAL\obj\Debug\netcoreapp2.0\DAL.dll
+H:\project\NH.Core\DAL\obj\Debug\netcoreapp2.0\DAL.pdb
