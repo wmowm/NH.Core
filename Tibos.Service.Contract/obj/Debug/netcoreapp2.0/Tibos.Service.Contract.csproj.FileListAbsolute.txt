@@ -1,0 +1,14 @@
+H:\GitProject\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Service.Contract.deps.json
+H:\GitProject\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Service.Contract.dll
+H:\GitProject\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Service.Contract.pdb
+H:\GitProject\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Domain.dll
+H:\GitProject\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Domain.pdb
+H:\GitProject\NH.Core\Tibos.Service.Contract\obj\Debug\netcoreapp2.0\Tibos.Service.Contract.csprojResolveAssemblyReference.cache
+H:\GitProject\NH.Core\Tibos.Service.Contract\obj\Debug\netcoreapp2.0\Tibos.Service.Contract.csproj.CoreCompileInputs.cache
+H:\GitProject\NH.Core\Tibos.Service.Contract\obj\Debug\netcoreapp2.0\Tibos.Service.Contract.AssemblyInfoInputs.cache
+H:\GitProject\NH.Core\Tibos.Service.Contract\obj\Debug\netcoreapp2.0\Tibos.Service.Contract.AssemblyInfo.cs
+H:\GitProject\NH.Core\Tibos.Service.Contract\obj\Debug\netcoreapp2.0\Tibos.Service.Contract.csproj.CopyComplete
+H:\GitProject\NH.Core\Tibos.Service.Contract\obj\Debug\netcoreapp2.0\Tibos.Service.Contract.dll
+H:\GitProject\NH.Core\Tibos.Service.Contract\obj\Debug\netcoreapp2.0\Tibos.Service.Contract.pdb
+H:\GitProject\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Common.dll
+H:\GitProject\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Common.pdb

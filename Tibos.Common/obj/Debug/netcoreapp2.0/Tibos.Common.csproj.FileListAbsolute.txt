@@ -1,0 +1,17 @@
+H:\GitProject\NH.Core\Common\bin\Debug\netcoreapp2.0\Tibos.Common.deps.json
+H:\GitProject\NH.Core\Common\bin\Debug\netcoreapp2.0\Tibos.Common.dll
+H:\GitProject\NH.Core\Common\bin\Debug\netcoreapp2.0\Tibos.Common.pdb
+H:\GitProject\NH.Core\Common\obj\Debug\netcoreapp2.0\Tibos.Common.csproj.CoreCompileInputs.cache
+H:\GitProject\NH.Core\Common\obj\Debug\netcoreapp2.0\Tibos.Common.AssemblyInfoInputs.cache
+H:\GitProject\NH.Core\Common\obj\Debug\netcoreapp2.0\Tibos.Common.AssemblyInfo.cs
+H:\GitProject\NH.Core\Common\obj\Debug\netcoreapp2.0\Tibos.Common.dll
+H:\GitProject\NH.Core\Common\obj\Debug\netcoreapp2.0\Tibos.Common.pdb
+H:\GitProject\NH.Core\Tibos.Common\bin\Debug\netcoreapp2.0\Tibos.Common.deps.json
+H:\GitProject\NH.Core\Tibos.Common\bin\Debug\netcoreapp2.0\Tibos.Common.dll
+H:\GitProject\NH.Core\Tibos.Common\bin\Debug\netcoreapp2.0\Tibos.Common.pdb
+H:\GitProject\NH.Core\Tibos.Common\obj\Debug\netcoreapp2.0\Tibos.Common.csprojResolveAssemblyReference.cache
+H:\GitProject\NH.Core\Tibos.Common\obj\Debug\netcoreapp2.0\Tibos.Common.csproj.CoreCompileInputs.cache
+H:\GitProject\NH.Core\Tibos.Common\obj\Debug\netcoreapp2.0\Tibos.Common.AssemblyInfoInputs.cache
+H:\GitProject\NH.Core\Tibos.Common\obj\Debug\netcoreapp2.0\Tibos.Common.AssemblyInfo.cs
+H:\GitProject\NH.Core\Tibos.Common\obj\Debug\netcoreapp2.0\Tibos.Common.dll
+H:\GitProject\NH.Core\Tibos.Common\obj\Debug\netcoreapp2.0\Tibos.Common.pdb

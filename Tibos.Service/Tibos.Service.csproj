@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tibos.Common\Tibos.Common.csproj" />
+    <ProjectReference Include="..\Tibos.Domain\Tibos.Domain.csproj" />
+    <ProjectReference Include="..\Tibos.Repository.Contract\Tibos.Repository.Contract.csproj" />
+    <ProjectReference Include="..\Tibos.Repository.Service\Tibos.Repository.Service.csproj" />
+    <ProjectReference Include="..\Tibos.Service.Contract\Tibos.Service.Contract.csproj" />
+  </ItemGroup>
+
+</Project>

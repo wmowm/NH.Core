@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="6.10.6" />
+    <PackageReference Include="NHibernate" Version="5.1.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.4.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tibos.Common\Tibos.Common.csproj" />
+    <ProjectReference Include="..\Tibos.Domain\Tibos.Domain.csproj" />
+    <ProjectReference Include="..\Tibos.Repository.Contract\Tibos.Repository.Contract.csproj" />
+  </ItemGroup>
+
+</Project>
