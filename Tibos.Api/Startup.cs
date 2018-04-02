@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
+using Autofac.Configuration;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Tibos.Api.Controllers;
+using Tibos.Confing.application;
 using Tibos.Confing.autofac;
 
 namespace Tibos.Api
@@ -38,6 +41,8 @@ namespace Tibos.Api
             //替换控制器所有者
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
 
+            //services.Configure<ApplicationConfiguration>(Configuration.GetSection("ApplicationConfiguration.json"));
+
             services.AddMvc();
             var containerBuilder = new ContainerBuilder();
             //模块化注入
@@ -46,6 +51,8 @@ namespace Tibos.Api
             containerBuilder.RegisterType<ValuesController>().PropertiesAutowired();
             containerBuilder.Populate(services);
             var container = containerBuilder.Build();
+
+
             return new AutofacServiceProvider(container);
         }
 

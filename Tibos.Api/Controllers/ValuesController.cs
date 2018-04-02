@@ -17,11 +17,13 @@ namespace Tibos.Api.Controllers
         public UsersIService _UsersService { get; set; }
 
 
+
+
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
-
 
            var res = _UsersService.Get(1);
             return new string[] { res.id.ToString(), res.user_name };
