@@ -12,3 +12,16 @@ H:\GitProject\NH.Core\Tibos.Service.Contract\obj\Debug\netcoreapp2.0\Tibos.Servi
 H:\GitProject\NH.Core\Tibos.Service.Contract\obj\Debug\netcoreapp2.0\Tibos.Service.Contract.pdb
 H:\GitProject\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Common.dll
 H:\GitProject\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Common.pdb
+F:\GitProduct\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Service.Contract.deps.json
+F:\GitProduct\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Service.Contract.dll
+F:\GitProduct\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Service.Contract.pdb
+F:\GitProduct\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Common.dll
+F:\GitProduct\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Domain.dll
+F:\GitProduct\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Common.pdb
+F:\GitProduct\NH.Core\Tibos.Service.Contract\bin\Debug\netcoreapp2.0\Tibos.Domain.pdb
+F:\GitProduct\NH.Core\Tibos.Service.Contract\obj\Debug\netcoreapp2.0\Tibos.Service.Contract.csprojResolveAssemblyReference.cache
+F:\GitProduct\NH.Core\Tibos.Service.Contract\obj\Debug\netcoreapp2.0\Tibos.Service.Contract.csproj.CoreCompileInputs.cache
+F:\GitProduct\NH.Core\Tibos.Service.Contract\obj\Debug\netcoreapp2.0\Tibos.Service.Contract.AssemblyInfoInputs.cache
+F:\GitProduct\NH.Core\Tibos.Service.Contract\obj\Debug\netcoreapp2.0\Tibos.Service.Contract.AssemblyInfo.cs
+F:\GitProduct\NH.Core\Tibos.Service.Contract\obj\Debug\netcoreapp2.0\Tibos.Service.Contract.dll
+F:\GitProduct\NH.Core\Tibos.Service.Contract\obj\Debug\netcoreapp2.0\Tibos.Service.Contract.pdb

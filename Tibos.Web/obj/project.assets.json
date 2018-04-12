@@ -5068,6 +5068,21 @@
           "bin/placeholder/Tibos.Confing.dll": {}
         }
       },
+      "Tibos.ConfingModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Json": "2.0.1",
+          "Microsoft.Extensions.DependencyInjection": "2.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "2.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Tibos.ConfingModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tibos.ConfingModel.dll": {}
+        }
+      },
       "Tibos.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -5096,10 +5111,12 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "2.0.1",
           "MySql.Data": "6.10.6",
           "NHibernate": "5.1.0",
           "System.Data.SqlClient": "4.4.3",
           "Tibos.Common": "1.0.0",
+          "Tibos.ConfingModel": "1.0.0",
           "Tibos.Domain": "1.0.0",
           "Tibos.Repository.Contract": "1.0.0"
         },
@@ -13421,6 +13438,11 @@
       "type": "project",
       "path": "../Tibos.Confing/Tibos.Confing.csproj",
       "msbuildProject": "../Tibos.Confing/Tibos.Confing.csproj"
+    },
+    "Tibos.ConfingModel/1.0.0": {
+      "type": "project",
+      "path": "../Tibos.ConfingModel/Tibos.ConfingModel.csproj",
+      "msbuildProject": "../Tibos.ConfingModel/Tibos.ConfingModel.csproj"
     },
     "Tibos.Domain/1.0.0": {
       "type": "project",

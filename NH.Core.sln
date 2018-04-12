@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27428.1
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01表现层", "01表现层", "{D4C12E8F-5E0D-455E-81E8-71546D866440}"
 EndProject
@@ -39,7 +39,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tibos.Service.Contract", "T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tibos.Api", "Tibos.Api\Tibos.Api.csproj", "{92BA69B1-0C4B-47A3-92CA-0C265AB19520}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibos.Test", "Tibos.Test\Tibos.Test.csproj", "{CAF253DD-7314-4439-BFC2-BA271B96F3E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tibos.Test", "Tibos.Test\Tibos.Test.csproj", "{CAF253DD-7314-4439-BFC2-BA271B96F3E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibos.ConfingModel", "Tibos.ConfingModel\Tibos.ConfingModel.csproj", "{29E708AB-A68B-419E-8640-026367C0BA7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{CAF253DD-7314-4439-BFC2-BA271B96F3E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAF253DD-7314-4439-BFC2-BA271B96F3E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAF253DD-7314-4439-BFC2-BA271B96F3E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29E708AB-A68B-419E-8640-026367C0BA7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29E708AB-A68B-419E-8640-026367C0BA7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29E708AB-A68B-419E-8640-026367C0BA7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29E708AB-A68B-419E-8640-026367C0BA7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +108,7 @@ Global
 		{867A096D-0E0F-4EC9-A5A7-A3DC50884726} = {513A3A81-2E93-4DB4-B5B3-534270A50C6B}
 		{92BA69B1-0C4B-47A3-92CA-0C265AB19520} = {D4C12E8F-5E0D-455E-81E8-71546D866440}
 		{CAF253DD-7314-4439-BFC2-BA271B96F3E2} = {416D0D1A-4023-4566-BACC-0653F89CF540}
+		{29E708AB-A68B-419E-8640-026367C0BA7C} = {5F909911-FC24-47CC-A9F5-BEC77155F34F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A94B1D2-C9FB-4144-B80F-BED3F002B315}

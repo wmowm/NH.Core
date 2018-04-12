@@ -15,17 +15,25 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Tibos.Api.Controllers;
-using Tibos.Confing.application;
+using Tibos.ConfingModel.model;
 using Tibos.Confing.autofac;
 
 namespace Tibos.Api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true) //默认
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)//增加环境配置文件，新建项目默认有
+                .AddJsonFile(env.ContentRootPath + @"\bin\Debug\netcoreapp2.0\application\autofac.json", optional: true)//增加配置 (自定义配置路径)
+                .AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
+
+
 
         public IConfiguration Configuration { get; }
 
@@ -40,10 +48,11 @@ namespace Tibos.Api
         {
             //替换控制器所有者
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
-
-            //services.Configure<ApplicationConfiguration>(Configuration.GetSection("ApplicationConfiguration.json"));
-
             services.AddMvc();
+            //添加options
+            services.AddOptions();
+            services.Configure<autofac>(Configuration.GetSection("autofac"));
+
             var containerBuilder = new ContainerBuilder();
             //模块化注入
             containerBuilder.RegisterModule<DefaultModule>();
@@ -51,6 +60,7 @@ namespace Tibos.Api
             containerBuilder.RegisterType<ValuesController>().PropertiesAutowired();
             containerBuilder.Populate(services);
             var container = containerBuilder.Build();
+
 
 
             return new AutofacServiceProvider(container);

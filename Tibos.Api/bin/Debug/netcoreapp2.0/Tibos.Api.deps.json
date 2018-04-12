@@ -27,6 +27,7 @@
           "Microsoft.NETCore.App": "2.0.0",
           "Tibos.Common": "1.0.0",
           "Tibos.Confing": "1.0.0",
+          "Tibos.ConfingModel": "1.0.0",
           "Tibos.Domain": "1.0.0"
         },
         "runtime": {
@@ -4073,6 +4074,19 @@
           "Tibos.Confing.dll": {}
         }
       },
+      "Tibos.ConfingModel/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Json": "2.0.1",
+          "Microsoft.Extensions.DependencyInjection": "2.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "2.0.1"
+        },
+        "runtime": {
+          "Tibos.ConfingModel.dll": {}
+        },
+        "compile": {
+          "Tibos.ConfingModel.dll": {}
+        }
+      },
       "Tibos.Domain/1.0.0": {
         "runtime": {
           "Tibos.Domain.dll": {}
@@ -4095,10 +4109,12 @@
       },
       "Tibos.Repository.Service/1.0.0": {
         "dependencies": {
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "2.0.1",
           "MySql.Data": "6.10.6",
           "NHibernate": "5.1.0",
           "System.Data.SqlClient": "4.4.3",
           "Tibos.Common": "1.0.0",
+          "Tibos.ConfingModel": "1.0.0",
           "Tibos.Domain": "1.0.0",
           "Tibos.Repository.Contract": "1.0.0"
         },
@@ -6454,6 +6470,11 @@
       "sha512": ""
     },
     "Tibos.Confing/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Tibos.ConfingModel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

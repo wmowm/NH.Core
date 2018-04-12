@@ -21,8 +21,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tibos.Common\Tibos.Common.csproj" />
+    <ProjectReference Include="..\Tibos.ConfingModel\Tibos.ConfingModel.csproj" />
     <ProjectReference Include="..\Tibos.Confing\Tibos.Confing.csproj" />
     <ProjectReference Include="..\Tibos.Domain\Tibos.Domain.csproj" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

@@ -11,17 +11,20 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Web;
+using Tibos.ConfingModel.model;
 using System.Xml;
 using MySql.Data;
 //using System.Data.SQLite;
 using Tibos.Common;
+using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Configuration;
+using Tibos.ConfingModel;
+
 namespace Tibos.Repository.Service
 {
     public class ManagerPage
     {
-
         private static ISessionFactory _sessionFactory;
-
         /// <summary>
         /// 链接信息,初始化NH
         /// </summary>
@@ -31,10 +34,11 @@ namespace Tibos.Repository.Service
             {
                 if (_sessionFactory == null)
                 {
+                   autofac config =  JsonConfigurationHelper.GetAppSettings<autofac>("autofac.json","autofac");
                     //string dbtype = "/bin/" + System.Configuration.ConfigurationManager.AppSettings["dbtype"];
                     //var path = HttpContext.Current.Server.MapPath(dbtype);
                     var path1 = HttpUtility.UrlPathEncode("");
-                    var path = @"H:\GitProject\NH.Core\Tibos.Confing\sqlconfig\sqlserver.cfg.xml";
+                    var path = @"F:\GitProduct\NH.Core\Tibos.Confing\sqlconfig\mysql.cfg.xml";
                     var cfg = new NHibernate.Cfg.Configuration().Configure(path);
                     _sessionFactory = cfg.BuildSessionFactory();
                 }
@@ -42,9 +46,6 @@ namespace Tibos.Repository.Service
                 return _sessionFactory;
             }
         }
-
-
-
 
         public static IList<T> GetCrit<T>(List<SearchTemplate> list, List<SortOrder> order, ICriteria crit)
         {

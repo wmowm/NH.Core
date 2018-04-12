@@ -202,6 +202,18 @@
           "lib/netstandard2.0/Microsoft.Extensions.Configuration.Json.dll": {}
         }
       },
+      "Microsoft.Extensions.DependencyInjection/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll": {}
+        }
+      },
       "Microsoft.Extensions.DependencyInjection.Abstractions/2.0.0": {
         "type": "package",
         "compile": {
@@ -1548,6 +1560,21 @@
           "bin/placeholder/Tibos.Common.dll": {}
         }
       },
+      "Tibos.ConfingModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Json": "2.0.1",
+          "Microsoft.Extensions.DependencyInjection": "2.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "2.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Tibos.ConfingModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tibos.ConfingModel.dll": {}
+        }
+      },
       "Tibos.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -1576,10 +1603,12 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "2.0.1",
           "MySql.Data": "6.10.6",
           "NHibernate": "5.1.0",
           "System.Data.SqlClient": "4.4.3",
           "Tibos.Common": "1.0.0",
+          "Tibos.ConfingModel": "1.0.0",
           "Tibos.Domain": "1.0.0",
           "Tibos.Repository.Contract": "1.0.0"
         },
@@ -1839,6 +1868,17 @@
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.Json.xml",
         "microsoft.extensions.configuration.json.2.0.1.nupkg.sha512",
         "microsoft.extensions.configuration.json.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection/2.0.0": {
+      "sha512": "wakg18gHYiUL1pcjjyZuYk6OvDpbSw1E7IWxm78TMepsr+gQ8W0tWzuRm0q/9RFblngwPwo15rrgZSUV51W5Iw==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection/2.0.0",
+      "files": [
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
+        "microsoft.extensions.dependencyinjection.2.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.nuspec"
       ]
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/2.0.0": {
@@ -5548,6 +5588,11 @@
       "type": "project",
       "path": "../Tibos.Common/Tibos.Common.csproj",
       "msbuildProject": "../Tibos.Common/Tibos.Common.csproj"
+    },
+    "Tibos.ConfingModel/1.0.0": {
+      "type": "project",
+      "path": "../Tibos.ConfingModel/Tibos.ConfingModel.csproj",
+      "msbuildProject": "../Tibos.ConfingModel/Tibos.ConfingModel.csproj"
     },
     "Tibos.Domain/1.0.0": {
       "type": "project",
