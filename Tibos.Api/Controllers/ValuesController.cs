@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Tibos.ConfingModel;
 using Tibos.ConfingModel.model;
 using Tibos.Domain;
 using Tibos.Service;
@@ -17,19 +18,12 @@ namespace Tibos.Api.Controllers
         public UsersIService _UsersService { get; set; }
 
 
-        public autofac _Config { get; set; }
-
-        public ValuesController(IOptions<autofac> option)
-        {
-            _Config = option.Value;
-        }
-
 
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            var a = _Config;
+            var config = JsonConfigurationHelper.GetAppSettings<ManageConfig>("ManageConfig.json", "ManageConfig");
             //Users m_user = new Users();
             //m_user.user_name = "这是测试哦";
             //_UsersService.Save(m_user);

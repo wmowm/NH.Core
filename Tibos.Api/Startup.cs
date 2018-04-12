@@ -28,7 +28,7 @@ namespace Tibos.Api
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true) //默认
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)//增加环境配置文件，新建项目默认有
-                .AddJsonFile(env.ContentRootPath + @"\bin\Debug\netcoreapp2.0\application\autofac.json", optional: true)//增加配置 (自定义配置路径)
+                //.AddJsonFile(env.ContentRootPath + @"\bin\Debug\netcoreapp2.0\application\ManageConfig.json", optional: true)//增加配置 (自定义配置路径)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
         }
@@ -51,7 +51,7 @@ namespace Tibos.Api
             services.AddMvc();
             //添加options
             services.AddOptions();
-            services.Configure<autofac>(Configuration.GetSection("autofac"));
+            services.Configure<ManageConfig>(Configuration.GetSection("autofac"));
 
             var containerBuilder = new ContainerBuilder();
             //模块化注入

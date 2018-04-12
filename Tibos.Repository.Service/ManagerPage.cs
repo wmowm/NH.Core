@@ -34,11 +34,8 @@ namespace Tibos.Repository.Service
             {
                 if (_sessionFactory == null)
                 {
-                   autofac config =  JsonConfigurationHelper.GetAppSettings<autofac>("autofac.json","autofac");
-                    //string dbtype = "/bin/" + System.Configuration.ConfigurationManager.AppSettings["dbtype"];
-                    //var path = HttpContext.Current.Server.MapPath(dbtype);
-                    var path1 = HttpUtility.UrlPathEncode("");
-                    var path = @"F:\GitProduct\NH.Core\Tibos.Confing\sqlconfig\mysql.cfg.xml";
+                    ManageConfig config =  JsonConfigurationHelper.GetAppSettings<ManageConfig>("ManageConfig.json", "ManageConfig");
+                    var path = AppContext.BaseDirectory + config.DBType;
                     var cfg = new NHibernate.Cfg.Configuration().Configure(path);
                     _sessionFactory = cfg.BuildSessionFactory();
                 }

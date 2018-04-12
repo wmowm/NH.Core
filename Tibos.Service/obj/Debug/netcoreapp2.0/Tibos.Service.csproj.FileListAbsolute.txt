@@ -57,6 +57,7 @@ F:\GitProduct\NH.Core\Tibos.Service\obj\Debug\netcoreapp2.0\Tibos.Service.dll
 F:\GitProduct\NH.Core\Tibos.Service\obj\Debug\netcoreapp2.0\Tibos.Service.pdb
 F:\GitProduct\NH.Core\Tibos.Service\bin\Debug\netcoreapp2.0\sqlconfig\mysql.cfg.xml
 F:\GitProduct\NH.Core\Tibos.Service\bin\Debug\netcoreapp2.0\sqlconfig\sqlserver.cfg.xml
-F:\GitProduct\NH.Core\Tibos.Service\bin\Debug\netcoreapp2.0\json\autofac.json
 F:\GitProduct\NH.Core\Tibos.Service\bin\Debug\netcoreapp2.0\Tibos.ConfingModel.dll
 F:\GitProduct\NH.Core\Tibos.Service\bin\Debug\netcoreapp2.0\Tibos.ConfingModel.pdb
+F:\GitProduct\NH.Core\Tibos.Service\bin\Debug\netcoreapp2.0\json\ManageConfig.json
+F:\GitProduct\NH.Core\Tibos.Service\bin\Debug\netcoreapp2.0\sqlconfig\sqlite.cfg.xml
