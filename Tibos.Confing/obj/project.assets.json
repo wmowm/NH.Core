@@ -5589,25 +5589,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tibos_ll\\.nuget\\packages\\": {},
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "H:\\GitProject\\NH.Core\\Tibos.Confing\\Tibos.Confing.csproj",
+      "projectUniqueName": "F:\\GitProduct\\NH.Core\\Tibos.Confing\\Tibos.Confing.csproj",
       "projectName": "Tibos.Confing",
-      "projectPath": "H:\\GitProject\\NH.Core\\Tibos.Confing\\Tibos.Confing.csproj",
-      "packagesPath": "C:\\Users\\tibos_ll\\.nuget\\packages\\",
-      "outputPath": "H:\\GitProject\\NH.Core\\Tibos.Confing\\obj\\",
+      "projectPath": "F:\\GitProduct\\NH.Core\\Tibos.Confing\\Tibos.Confing.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "F:\\GitProduct\\NH.Core\\Tibos.Confing\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\tibos_ll\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
@@ -5621,11 +5624,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "H:\\GitProject\\NH.Core\\Tibos.Service.Contract\\Tibos.Service.Contract.csproj": {
-              "projectPath": "H:\\GitProject\\NH.Core\\Tibos.Service.Contract\\Tibos.Service.Contract.csproj"
+            "F:\\GitProduct\\NH.Core\\Tibos.Service\\Tibos.Service.csproj": {
+              "projectPath": "F:\\GitProduct\\NH.Core\\Tibos.Service\\Tibos.Service.csproj"
             },
-            "H:\\GitProject\\NH.Core\\Tibos.Service\\Tibos.Service.csproj": {
-              "projectPath": "H:\\GitProject\\NH.Core\\Tibos.Service\\Tibos.Service.csproj"
+            "F:\\GitProduct\\NH.Core\\Tibos.Service.Contract\\Tibos.Service.Contract.csproj": {
+              "projectPath": "F:\\GitProduct\\NH.Core\\Tibos.Service.Contract\\Tibos.Service.Contract.csproj"
             }
           }
         }
