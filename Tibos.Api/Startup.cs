@@ -17,6 +17,14 @@ using Microsoft.Extensions.Options;
 using Tibos.Api.Controllers;
 using Tibos.ConfingModel.model;
 using Tibos.Confing.autofac;
+using Tibos.Api.Areas.User.Controllers;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using Tibos.Api.Filters;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Tibos.Api
 {
@@ -48,16 +56,52 @@ namespace Tibos.Api
         {
             //替换控制器所有者
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
-            services.AddMvc();
+
+            services.AddMvc(options=>
+            {
+                options.Filters.Add(typeof(ResourceFilterAttribute));
+                options.Filters.Add(typeof(ActionFilterAttribute));
+                //options.Filters.Add(typeof(ExceptionFilterAttribute));
+                options.Filters.Add(typeof(ResultFilterAttribute));
+
+            }).AddJsonOptions(options =>
+                {
+                    //忽略循环引用
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                    //不使用驼峰样式的key
+                    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                    //设置时间格式
+                    options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+                });
+
+            //角色认证
+            services.AddAuthentication(
+            options =>
+            {
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+            .AddCookie(options =>
+            {
+                options.LoginPath = "/home/";
+                options.Cookie.HttpOnly = true;
+            });
+            services.AddTransient<HttpContextAccessor>();
+
+
             //添加options
             services.AddOptions();
-            services.Configure<ManageConfig>(Configuration.GetSection("autofac"));
+            services.Configure<ManageConfig>(Configuration.GetSection("ManageConfig"));
+
+            //权限验证
+            services.AddAuthorization();
 
             var containerBuilder = new ContainerBuilder();
             //模块化注入
             containerBuilder.RegisterModule<DefaultModule>();
             //属性注入控制器
-            containerBuilder.RegisterType<ValuesController>().PropertiesAutowired();
+            containerBuilder.RegisterType<HomeController>().PropertiesAutowired();
+            containerBuilder.RegisterType<UserController>().PropertiesAutowired();
             containerBuilder.Populate(services);
             var container = containerBuilder.Build();
 
@@ -68,20 +112,21 @@ namespace Tibos.Api
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-
-            //var data = Configuration["Data"];
-            ////两种方式读取
-            //var defaultcon = Configuration.GetConnectionString("DefaultConnection");
-            //var devcon = Configuration["ConnectionStrings:DevConnection"];
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                   name: "default",
+                   template: "{controller}/{action}/{id?}",
+                   defaults: new { controller = "Home", action = "Index" });
+            });
 
-            app.UseMvc();
+            app.UseAuthentication();
         }
     }
 }
