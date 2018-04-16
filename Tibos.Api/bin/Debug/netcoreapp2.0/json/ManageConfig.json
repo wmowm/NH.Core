@@ -8,7 +8,7 @@
     "DBType": "/sqlconfig/mysql.cfg.xml",
     //允许上传的文件格式
     "AttachExtension": "gif,jpg,jpeg,png,bmp,rar,zip,doc,docx,xls,xlsx,ppt,pptx,txt,flv,apk,mp4,mpg,ts,mpeg,mp3,bak,pdf",
-    //图片上传最大值KB
-    "AttachImagesize": 1300
+    //图片上传最大值KB(默认5M)
+    "AttachImagesize": 5120
   }
 }

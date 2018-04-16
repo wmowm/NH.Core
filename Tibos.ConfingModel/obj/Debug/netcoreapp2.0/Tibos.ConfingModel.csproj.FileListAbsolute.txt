@@ -11,3 +11,4 @@ F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Debug\netcoreapp2.0\Tibos.ConfingMo
 F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Debug\netcoreapp2.0\Tibos.ConfingModel.pdb
 F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Debug\netcoreapp2.0\json\ManageConfig.json
 F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Debug\netcoreapp2.0\sqlconfig\sqlite.cfg.xml
+F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Debug\netcoreapp2.0\json\TokenConfig.json

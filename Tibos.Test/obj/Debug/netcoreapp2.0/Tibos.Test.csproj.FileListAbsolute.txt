@@ -1,0 +1,11 @@
+F:\GitProduct\NH.Core\Tibos.Test\bin\Debug\netcoreapp2.0\Tibos.Test.deps.json
+F:\GitProduct\NH.Core\Tibos.Test\bin\Debug\netcoreapp2.0\Tibos.Test.runtimeconfig.json
+F:\GitProduct\NH.Core\Tibos.Test\bin\Debug\netcoreapp2.0\Tibos.Test.runtimeconfig.dev.json
+F:\GitProduct\NH.Core\Tibos.Test\bin\Debug\netcoreapp2.0\Tibos.Test.dll
+F:\GitProduct\NH.Core\Tibos.Test\bin\Debug\netcoreapp2.0\Tibos.Test.pdb
+F:\GitProduct\NH.Core\Tibos.Test\obj\Debug\netcoreapp2.0\Tibos.Test.csprojResolveAssemblyReference.cache
+F:\GitProduct\NH.Core\Tibos.Test\obj\Debug\netcoreapp2.0\Tibos.Test.csproj.CoreCompileInputs.cache
+F:\GitProduct\NH.Core\Tibos.Test\obj\Debug\netcoreapp2.0\Tibos.Test.AssemblyInfoInputs.cache
+F:\GitProduct\NH.Core\Tibos.Test\obj\Debug\netcoreapp2.0\Tibos.Test.AssemblyInfo.cs
+F:\GitProduct\NH.Core\Tibos.Test\obj\Debug\netcoreapp2.0\Tibos.Test.dll
+F:\GitProduct\NH.Core\Tibos.Test\obj\Debug\netcoreapp2.0\Tibos.Test.pdb

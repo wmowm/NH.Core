@@ -25,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="json\TokenConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="json\ManageConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

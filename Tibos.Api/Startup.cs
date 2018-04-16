@@ -73,21 +73,22 @@ namespace Tibos.Api
                     //设置时间格式
                     options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
                 });
-
-            //角色认证
-            services.AddAuthentication(
-            options =>
-            {
-                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            })
-            .AddCookie(options =>
-            {
-                options.LoginPath = "/home/";
-                options.Cookie.HttpOnly = true;
-            });
             services.AddTransient<HttpContextAccessor>();
 
+            //缓存
+            services.AddMemoryCache();
+
+            //配置跨域处理
+            services.AddCors(options =>
+            {
+                options.AddPolicy("any", builder =>
+                {
+                    builder.AllowAnyOrigin() //允许任何来源的主机访问
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials();//指定处理cookie
+                });
+            });
 
             //添加options
             services.AddOptions();
@@ -125,7 +126,6 @@ namespace Tibos.Api
                    template: "{controller}/{action}/{id?}",
                    defaults: new { controller = "Home", action = "Index" });
             });
-
             app.UseAuthentication();
         }
     }

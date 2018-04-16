@@ -3,3 +3,39 @@
 }
 
 @ViewBag.res
+
+
+<script src="~/js/jquery.min.js"></script>
+<script>
+    var para = JSON.stringify("123");
+    var j = JSON.parse(para)
+
+    var mm = {
+        "Id": 1,
+        "DataItems": [{
+            "Id": 1,
+            "Name": "DI1",
+            "Properties": [{
+                "Name": "DI1->P1"
+            }]
+        }, {
+            "Id": 2,
+            "Name": "DI2",
+            "Properties": [{
+                "Name": "DI2->P2"
+            }]
+        }]
+    };
+
+    //alert(j);
+    $.ajax({
+        type: "post",
+        url: "http://localhost:7075/api/user/list",
+        data: JSON.stringify(mm),
+        contentType: 'application/json; charset=urf-8',
+        success: function (data, status)
+        {
+            alert(data);
+         }
+    });
+</script>

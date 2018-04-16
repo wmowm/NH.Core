@@ -33,9 +33,14 @@ namespace Tibos.Api.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<string> Get(int id)
         {
-            return "value";
+            return await Task.Run<string>(()=> {return Test(); });
+        }
+
+        private string Test()
+        {
+            return "666";
         }
 
         // POST api/values
@@ -48,4 +53,9 @@ namespace Tibos.Api.Controllers
 
 
     }
+
+
+
+   
+
 }
