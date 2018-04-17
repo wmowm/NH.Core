@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
+using Newtonsoft.Json;
 using Tibos.Common;
 using Tibos.ConfingModel;
 using Tibos.ConfingModel.model;
@@ -99,13 +100,45 @@ namespace Tibos.Api.Areas.User.Controllers
             });
         }
 
-        [Route("list"),HttpPost]
-        public async Task<JsonResult> List([FromBody]DataParameter parameter)
+        [Route("getlist"),HttpPost]
+        public async Task<JsonResult> GetList([FromBody]Dictionary<string, dynamic> dic)
         {
             return await Task.Run<JsonResult>(() =>
             {
-
-                return Json(parameter);
+                //自定义参数模板
+                List<SearchTemplate> st = new List<SearchTemplate>();
+                //自定义排序模板
+                List<SortOrder> order = new List<SortOrder>();
+                //对参数的操作
+                foreach (var item in dic.Keys)
+                {
+                    //根据用户名模糊查询
+                    if (item == "user_name")
+                    {
+                        st.Add(new SearchTemplate() { key = "user_name", value = dic[item], searchType = EnumBase.SearchType.Like });
+                    }
+                    //根据用户名模糊查询
+                    if (item == "mobile")
+                    {
+                        st.Add(new SearchTemplate() { key = "mobile", value = dic[item], searchType = EnumBase.SearchType.Like });
+                    }
+                    //排序
+                    if (item == "order")
+                    {
+                        var str = JsonConvert.SerializeObject(dic[item]);
+                        order = JsonConvert.DeserializeObject<List<SortOrder>>(str);
+                    }
+                    //分页
+                    if (item == "paging")
+                    {
+                        var str = JsonConvert.SerializeObject(dic[item]);
+                        int [] paging = JsonConvert.DeserializeObject<int[]>(str);
+                        st.Add(new SearchTemplate() { key = "", value = paging, searchType = Common.EnumBase.SearchType.Paging });
+                    }
+                    //后面可以根据业务拓展查询条件
+                }
+                var list = _UsersService.GetList(st, order);
+                return Json(list);
             });
         }
 

@@ -7,34 +7,23 @@
 
 <script src="~/js/jquery.min.js"></script>
 <script>
-    var para = JSON.stringify("123");
-    var j = JSON.parse(para)
-
     var mm = {
-        "Id": 1,
-        "DataItems": [{
-            "Id": 1,
-            "Name": "DI1",
-            "Properties": [{
-                "Name": "DI1->P1"
-            }]
-        }, {
-            "Id": 2,
-            "Name": "DI2",
-            "Properties": [{
-                "Name": "DI2->P2"
-            }]
-        }]
+        "user_name": "admin",
+        //"mobile": "123456",
+        "order": [{ "searchType": 1,"value": "id" }],
+        "paging": [1, 10]
     };
-
-    //alert(j);
+    var jj = JSON.stringify(mm);
+    var test;
     $.ajax({
         type: "post",
-        url: "http://localhost:7075/api/user/list",
+        url: "http://localhost:7075/api/user/getlist",
         data: JSON.stringify(mm),
+        async: false,
         contentType: 'application/json; charset=urf-8',
         success: function (data, status)
         {
+            test = data;
             alert(data);
          }
     });
