@@ -25,6 +25,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Tibos.Api.Filters;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Text;
+using NLog.Extensions.Logging;
+using NLog.Web;
+using System.Reflection;
 
 namespace Tibos.Api
 {
@@ -45,13 +49,6 @@ namespace Tibos.Api
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        //public void ConfigureServices(IServiceCollection services)
-        //{
-        //    services.AddMvc();
-        //}
-
-
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             //替换控制器所有者
@@ -61,7 +58,7 @@ namespace Tibos.Api
             {
                 options.Filters.Add(typeof(ResourceFilterAttribute));
                 options.Filters.Add(typeof(ActionFilterAttribute));
-                //options.Filters.Add(typeof(ExceptionFilterAttribute));
+                options.Filters.Add(typeof(ExceptionFilterAttribute));
                 options.Filters.Add(typeof(ResultFilterAttribute));
 
             }).AddJsonOptions(options =>
@@ -101,8 +98,12 @@ namespace Tibos.Api
             //模块化注入
             containerBuilder.RegisterModule<DefaultModule>();
             //属性注入控制器
-            containerBuilder.RegisterType<HomeController>().PropertiesAutowired();
-            containerBuilder.RegisterType<UserController>().PropertiesAutowired();
+
+            //containerBuilder.RegisterControllers(Assembly.GetExecutingAssembly());  //注入所有Controller
+            containerBuilder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly()).PropertiesAutowired();
+            //containerBuilder.RegisterType<HomeController>().PropertiesAutowired();
+            //containerBuilder.RegisterType<UserController>().PropertiesAutowired();
+
             containerBuilder.Populate(services);
             var container = containerBuilder.Build();
 
@@ -127,6 +128,9 @@ namespace Tibos.Api
                    defaults: new { controller = "Home", action = "Index" });
             });
             app.UseAuthentication();
+            loggerFactory.AddNLog();//添加NLog
+            env.ConfigureNLog(@"bin\Debug\netcoreapp2.0\config\nlog.config");//读取Nlog配置文件
+
         }
     }
 }

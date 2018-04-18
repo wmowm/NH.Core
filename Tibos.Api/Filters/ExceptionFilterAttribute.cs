@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tibos.Api.Filters
 {
-    public class ExceptionFilterAttribute
+    public class ExceptionFilterAttribute: IFilterMetadata
     {
         private readonly ILogger<ExceptionFilterAttribute> logger;
  

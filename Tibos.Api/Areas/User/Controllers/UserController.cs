@@ -48,8 +48,8 @@ namespace Tibos.Api.Areas.User.Controllers
             });
         }
 
-        [HttpGet("{token}")]
-        public async Task<JsonResult> Get(string user_name, string password)
+        [Route("gettoken"),HttpGet]
+        public async Task<JsonResult> GetToken(string user_name, string password)
         {
             return await Task.Run<JsonResult>(() =>
             {
@@ -152,7 +152,7 @@ namespace Tibos.Api.Areas.User.Controllers
             });
         }
 
-        [HttpPut("{edit}")]
+        [HttpPut]
         public async Task<JsonResult> Edit(Users user)
         {
             return await Task.Run<JsonResult>(() =>
@@ -162,7 +162,7 @@ namespace Tibos.Api.Areas.User.Controllers
             });
         }
 
-        [HttpDelete("{delete}")]
+        [HttpDelete]
         public async Task<JsonResult> Delete(int id)
         {
             return await Task.Run<JsonResult>(() =>
@@ -171,41 +171,5 @@ namespace Tibos.Api.Areas.User.Controllers
                 return Json("成功删除了一条数据");
             });
         }
-    }
-
-    [Serializable]
-    public class DataParameter
-    {
-        public DataParameter()
-        {
-            this.DataItems = new List<DataItemParameter>();
-        }
-
-        public int Id { get; set; }
-
-        public List<DataItemParameter> DataItems { get; set; }
-    }
-
-    [Serializable]
-    public class DataItemParameter
-    {
-        public DataItemParameter() { }
-        public DataItemParameter(int id, string name)
-        {
-            this.Id = id;
-            this.Name = name;
-        }
-
-        public int Id { get; set; }
-
-        public string Name { get; set; }
-
-        public List<DataItemProperty> Properties { get; set; }
-    }
-
-    [Serializable]
-    public class DataItemProperty
-    {
-        public string Name { get; set; }
     }
 }

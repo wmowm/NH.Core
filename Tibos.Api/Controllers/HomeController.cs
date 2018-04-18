@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Tibos.Confing.autofac;
 using Tibos.ConfingModel;
 using Tibos.ConfingModel.model;
 using Tibos.Domain;

@@ -52,3 +52,4 @@ F:\GitProduct\NH.Core\Tibos.Repository.Service\bin\Debug\netcoreapp2.0\Tibos.Con
 F:\GitProduct\NH.Core\Tibos.Repository.Service\bin\Debug\netcoreapp2.0\json\ManageConfig.json
 F:\GitProduct\NH.Core\Tibos.Repository.Service\bin\Debug\netcoreapp2.0\sqlconfig\sqlite.cfg.xml
 F:\GitProduct\NH.Core\Tibos.Repository.Service\bin\Debug\netcoreapp2.0\json\TokenConfig.json
+F:\GitProduct\NH.Core\Tibos.Repository.Service\bin\Debug\netcoreapp2.0\config\nlog.config

@@ -1,0 +1,736 @@
+2018-04-18 14:26:21.1911 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 14:26:21.4472 | Info | Policy execution successful. 
+2018-04-18 14:26:21.4472 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 14:26:21.4672 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 14:26:21.4672 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 28.2115ms 
+2018-04-18 14:26:21.4842 | Info | Request finished in 339.832ms 200  
+2018-04-18 14:26:21.4932 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 14:26:21.4932 | Info | Policy execution successful. 
+2018-04-18 14:26:23.6953 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 14:26:23
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 14:26:23.6953 | Info | Executing action method Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) with arguments (System.Collections.Generic.Dictionary`2[System.String,System.Object]) - ModelState is Valid 
+2018-04-18 14:26:24.1413 | Info | Executing JsonResult, writing value System.Collections.Generic.List`1[Tibos.Domain.Users]. 
+2018-04-18 14:26:24.1843 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 2688.0585ms 
+2018-04-18 14:26:24.1843 | Info | Request finished in 2696.1409ms 200 application/json; charset=utf-8 
+2018-04-18 14:27:38.2636 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 14:27:38.2636 | Info | 
+			Action执行时间监控：
+			ControllerName：HomeController
+			ActionName:Get
+			开始时间：2018/4/18 星期三 14:27:38
+			Form表单数据：
+			URL参数：
+					 
+2018-04-18 14:27:38.2636 | Info | Executing action method Tibos.Api.Controllers.HomeController.Get (Tibos.Api) with arguments ((null)) - ModelState is Valid 
+2018-04-18 14:27:38.3306 | Info | Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+2018-04-18 14:27:38.3306 | Info | Executed action Tibos.Api.Controllers.HomeController.Get (Tibos.Api) in 70.0665ms 
+2018-04-18 14:27:38.3396 | Info | Request finished in 81.6721ms 200 application/json; charset=utf-8 
+2018-04-18 14:28:54.6919 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/user/token?user_name=admin&password=123456   
+2018-04-18 14:28:54.7049 | Info | Request finished in 12.8954ms 404  
+2018-04-18 14:29:11.2929 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/user/gettoken?user_name=admin&password=123456   
+2018-04-18 14:29:11.3489 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) in 28.2432ms 
+2018-04-18 14:29:11.6689 | Info | Request finished in 376.2081ms 500 text/html; charset=utf-8 
+2018-04-18 14:31:12.1568 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 14:31:17.5161 | Info | 
+			Action执行时间监控：
+			ControllerName：HomeController
+			ActionName:Get
+			开始时间：2018/4/18 星期三 14:31:17
+			Form表单数据：
+			URL参数：
+					 
+2018-04-18 14:31:17.6201 | Info | Executing action method Tibos.Api.Controllers.HomeController.Get (Tibos.Api) with arguments ((null)) - ModelState is Valid 
+2018-04-18 14:31:19.5192 | Info | Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+2018-04-18 14:31:19.7002 | Info | Executed action Tibos.Api.Controllers.HomeController.Get (Tibos.Api) in 7086.6758ms 
+2018-04-18 14:31:19.7212 | Info | Request finished in 7627.4665ms 200 application/json; charset=utf-8 
+2018-04-18 14:31:19.7442 | Info | Request starting HTTP/1.1 GET http://localhost:7075/favicon.ico   
+2018-04-18 14:31:19.7612 | Info | Request finished in 16.2476ms 404  
+2018-04-18 14:31:23.8625 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/user/gettoken?user_name=admin&password=123456   
+2018-04-18 14:36:12.8480 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/user/gettoken?user_name=admin&password=123456   
+2018-04-18 14:36:15.0441 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetToken
+			开始时间：2018/4/18 星期三 14:36:15
+			Form表单数据：
+			URL参数：?user_name=admin&password=123456
+					 
+2018-04-18 14:36:15.0551 | Info | Executing action method Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) with arguments (admin, 123456) - ModelState is Valid 
+2018-04-18 14:36:15.3711 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 14:36:15.5351 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) in 2441.9319ms 
+2018-04-18 14:36:15.5351 | Info | Request finished in 2741.1334ms 200 application/json; charset=utf-8 
+2018-04-18 14:53:43.1031 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 14:55:41.0308 | Info | 
+			Action执行时间监控：
+			ControllerName：HomeController
+			ActionName:Get
+			开始时间：2018/4/18 星期三 14:55:38
+			Form表单数据：
+			URL参数：
+					 
+2018-04-18 14:55:52.1294 | Info | Executing action method Tibos.Api.Controllers.HomeController.Get (Tibos.Api) with arguments ((null)) - ModelState is Valid 
+2018-04-18 14:55:52.4555 | Info | Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+2018-04-18 14:55:52.6505 | Info | Executed action Tibos.Api.Controllers.HomeController.Get (Tibos.Api) in 129060.9132ms 
+2018-04-18 14:55:52.6505 | Info | Request finished in 129628.3694ms 200 application/json; charset=utf-8 
+2018-04-18 14:55:52.6885 | Info | Request starting HTTP/1.1 GET http://localhost:7075/favicon.ico   
+2018-04-18 14:55:52.7095 | Info | Request finished in 17.157ms 404  
+2018-04-18 14:55:59.7759 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 14:55:59.8399 | Info | Policy execution successful. 
+2018-04-18 14:55:59.8519 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 14:55:59.8639 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 14:55:59.8639 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 34.7382ms 
+2018-04-18 14:55:59.8759 | Info | Request finished in 100.2909ms 200  
+2018-04-18 14:55:59.8899 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 14:55:59.8899 | Info | Policy execution successful. 
+2018-04-18 14:57:40.5116 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 14:57:45.0939 | Info | 
+			Action执行时间监控：
+			ControllerName：HomeController
+			ActionName:Get
+			开始时间：2018/4/18 星期三 14:57:45
+			Form表单数据：
+			URL参数：
+					 
+2018-04-18 14:57:48.2841 | Info | Executing action method Tibos.Api.Controllers.HomeController.Get (Tibos.Api) with arguments ((null)) - ModelState is Valid 
+2018-04-18 14:57:48.5691 | Info | Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+2018-04-18 14:57:48.7441 | Info | Executed action Tibos.Api.Controllers.HomeController.Get (Tibos.Api) in 7731.5258ms 
+2018-04-18 14:57:48.7561 | Info | Request finished in 8311.7215ms 200 application/json; charset=utf-8 
+2018-04-18 14:57:48.7761 | Info | Request starting HTTP/1.1 GET http://localhost:7075/favicon.ico   
+2018-04-18 14:57:48.7951 | Info | Request finished in 18.2011ms 404  
+2018-04-18 14:57:51.6863 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 14:57:51.7503 | Info | Policy execution successful. 
+2018-04-18 14:57:51.7593 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 14:57:51.7593 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 14:57:51.7593 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 29.3654ms 
+2018-04-18 14:57:51.7823 | Info | Request finished in 91.6117ms 200  
+2018-04-18 14:57:51.7923 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 14:57:51.7923 | Info | Policy execution successful. 
+2018-04-18 15:00:37.1837 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 15:00:37
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 15:00:38.5888 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 166788.8779ms 
+2018-04-18 15:00:38.8728 | Info | Request finished in 167077.8485ms 500 text/html; charset=utf-8 
+2018-04-18 15:02:09.5920 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 15:02:09.6030 | Info | Policy execution successful. 
+2018-04-18 15:02:09.6120 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 15:02:09.6390 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 15:02:09.6530 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 56.1655ms 
+2018-04-18 15:02:09.6580 | Info | Request finished in 65.1813ms 200  
+2018-04-18 15:02:09.6750 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 15:02:09.6750 | Info | Policy execution successful. 
+2018-04-18 15:02:15.0983 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 15:02:15
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 15:02:18.1405 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 8460.9261ms 
+2018-04-18 15:02:18.3225 | Info | Request finished in 8645.7229ms 500 text/html; charset=utf-8 
+2018-04-18 15:02:33.4934 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 15:02:33.5044 | Info | Policy execution successful. 
+2018-04-18 15:02:33.5554 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 15:02:33.5654 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 15:02:33.6044 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 105.3724ms 
+2018-04-18 15:02:33.6044 | Info | Request finished in 115.3225ms 200  
+2018-04-18 15:02:33.6224 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 15:02:33.6224 | Info | Policy execution successful. 
+2018-04-18 15:03:40.0022 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 15:04:31.1751 | Info | 
+			Action执行时间监控：
+			ControllerName：HomeController
+			ActionName:Get
+			开始时间：2018/4/18 星期三 15:04:31
+			Form表单数据：
+			URL参数：
+					 
+2018-04-18 15:04:49.5992 | Info | Executing action method Tibos.Api.Controllers.HomeController.Get (Tibos.Api) with arguments ((null)) - ModelState is Valid 
+2018-04-18 15:04:49.9052 | Info | Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+2018-04-18 15:04:50.1032 | Info | Executed action Tibos.Api.Controllers.HomeController.Get (Tibos.Api) in 69675.3652ms 
+2018-04-18 15:04:50.1372 | Info | Request finished in 70199.9586ms 200 application/json; charset=utf-8 
+2018-04-18 15:04:50.1562 | Info | Request starting HTTP/1.1 GET http://localhost:7075/favicon.ico   
+2018-04-18 15:04:50.1822 | Info | Request finished in 19.7636ms 404  
+2018-04-18 15:04:53.2904 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 15:04:53.3614 | Info | Policy execution successful. 
+2018-04-18 15:04:53.3704 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 15:04:53.3704 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 15:04:53.3844 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 26.0008ms 
+2018-04-18 15:04:53.3844 | Info | Request finished in 100.0567ms 200  
+2018-04-18 15:04:53.3984 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 15:04:53.3984 | Info | Policy execution successful. 
+2018-04-18 15:04:55.1345 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 15:04:55
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 15:06:29.2789 | Info | Executing action method Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) with arguments (System.Collections.Generic.Dictionary`2[System.String,System.Object]) - ModelState is Valid 
+2018-04-18 15:06:29.5759 | Info | Executing JsonResult, writing value System.Collections.Generic.List`1[Tibos.Domain.Users]. 
+2018-04-18 15:06:29.6559 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 96249.7067ms 
+2018-04-18 15:06:29.6769 | Info | Request finished in 96263.115ms 200 application/json; charset=utf-8 
+2018-04-18 15:06:33.7631 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/user/gettoken?user_name=admin&password=123456   
+2018-04-18 15:06:35.1412 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetToken
+			开始时间：2018/4/18 星期三 15:06:35
+			Form表单数据：
+			URL参数：?user_name=admin&password=123456
+					 
+2018-04-18 15:06:39.5855 | Info | Executing action method Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) with arguments (admin, 123456) - ModelState is Valid 
+2018-04-18 15:06:39.6335 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 15:06:39.6515 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) in 5868.9443ms 
+2018-04-18 15:06:39.6515 | Info | Request finished in 5899.0959ms 200 application/json; charset=utf-8 
+2018-04-18 15:06:43.3027 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 15:06:43.3027 | Info | Policy execution successful. 
+2018-04-18 15:06:43.3167 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 15:06:43.3167 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 15:06:43.3367 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 23.033ms 
+2018-04-18 15:06:43.3367 | Info | Request finished in 39.4641ms 200  
+2018-04-18 15:06:43.3547 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 15:06:43.3547 | Info | Policy execution successful. 
+2018-04-18 15:06:51.8762 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 15:06:51
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 15:45:33.0609 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 15:45:33.3300 | Info | Policy execution successful. 
+2018-04-18 15:45:33.3300 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 15:45:33.3300 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 15:45:33.3510 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 23.2464ms 
+2018-04-18 15:45:33.3510 | Info | Request finished in 344.9293ms 200  
+2018-04-18 15:45:33.3680 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 15:45:33.3680 | Info | Policy execution successful. 
+2018-04-18 15:45:35.5001 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 15:45:35
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 15:45:35.5001 | Info | Executing action method Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) with arguments (System.Collections.Generic.Dictionary`2[System.String,System.Object]) - ModelState is Valid 
+2018-04-18 15:45:35.9531 | Info | Executing JsonResult, writing value System.Collections.Generic.List`1[Tibos.Domain.Users]. 
+2018-04-18 15:45:35.9981 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 2628.0913ms 
+2018-04-18 15:45:35.9981 | Info | Request finished in 2635.7281ms 200 application/json; charset=utf-8 
+2018-04-18 15:46:19.8376 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 15:46:19.8376 | Info | Policy execution successful. 
+2018-04-18 15:46:19.8376 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 15:46:19.8376 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 15:46:19.8376 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 3.1145ms 
+2018-04-18 15:46:19.8376 | Info | Request finished in 5.5336ms 200  
+2018-04-18 15:46:19.8546 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 15:46:19.8546 | Info | Policy execution successful. 
+2018-04-18 15:46:19.8546 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 15:46:19
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 15:46:19.8546 | Info | Executing action method Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) with arguments (System.Collections.Generic.Dictionary`2[System.String,System.Object]) - ModelState is Valid 
+2018-04-18 15:46:19.8896 | Info | Executing JsonResult, writing value System.Collections.Generic.List`1[Tibos.Domain.Users]. 
+2018-04-18 15:46:19.8896 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 35.2209ms 
+2018-04-18 15:46:19.8896 | Info | Request finished in 37.7355ms 200 application/json; charset=utf-8 
+2018-04-18 15:46:39.2907 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 15:46:39.2907 | Info | Policy execution successful. 
+2018-04-18 15:46:39.2907 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 15:46:39.2907 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 15:46:39.2907 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 3.5972ms 
+2018-04-18 15:46:39.2907 | Info | Request finished in 6.3485ms 200  
+2018-04-18 15:46:39.3107 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 15:46:39.3107 | Info | Policy execution successful. 
+2018-04-18 15:46:39.3477 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 15:46:39
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 15:46:39.3697 | Info | Executing action method Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) with arguments (System.Collections.Generic.Dictionary`2[System.String,System.Object]) - ModelState is Valid 
+2018-04-18 15:46:39.3947 | Info | Executing JsonResult, writing value System.Collections.Generic.List`1[Tibos.Domain.Users]. 
+2018-04-18 15:46:39.3947 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 83.3031ms 
+2018-04-18 15:46:39.3977 | Info | Request finished in 86.7542ms 200 application/json; charset=utf-8 
+2018-04-18 15:47:32.3818 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 15:47:32.3818 | Info | Policy execution successful. 
+2018-04-18 15:47:32.3818 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 15:47:32.3818 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 15:47:32.3818 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 3.5073ms 
+2018-04-18 15:47:32.3818 | Info | Request finished in 6.5516ms 200  
+2018-04-18 15:47:32.4038 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 15:47:32.4058 | Info | Policy execution successful. 
+2018-04-18 15:47:32.4058 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 15:47:32
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 15:47:32.4058 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 15:47:32.4218 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 16.8805ms 
+2018-04-18 15:47:32.4218 | Info | Request finished in 19.5182ms 200 application/json; charset=utf-8 
+2018-04-18 16:04:44.7978 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 16:04:45.0538 | Info | Policy execution successful. 
+2018-04-18 16:04:45.0638 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 16:04:45.0698 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 16:04:45.0698 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 23.4128ms 
+2018-04-18 16:04:45.0698 | Info | Request finished in 328.7495ms 200  
+2018-04-18 16:04:45.0928 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 16:04:45.0928 | Info | Policy execution successful. 
+2018-04-18 16:04:47.2300 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 16:04:47
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 16:04:47.2420 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:04:47.2860 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 2190.2729ms 
+2018-04-18 16:04:47.2860 | Info | Request finished in 2197.7607ms 200 application/json; charset=utf-8 
+2018-04-18 16:05:11.1583 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 16:05:11.1583 | Info | Policy execution successful. 
+2018-04-18 16:05:11.1583 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 16:05:11.1583 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 16:05:11.1583 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 5.0297ms 
+2018-04-18 16:05:11.1583 | Info | Request finished in 7.7729ms 200  
+2018-04-18 16:05:11.1733 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 16:05:11.1733 | Info | Policy execution successful. 
+2018-04-18 16:05:11.1733 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 16:05:11
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 16:05:11.1733 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:05:11.1733 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 7.4081ms 
+2018-04-18 16:05:11.1903 | Info | Request finished in 15.465ms 200 application/json; charset=utf-8 
+2018-04-18 16:05:26.9192 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/user/gettoken?user_name=admin&password=123456   
+2018-04-18 16:05:26.9342 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetToken
+			开始时间：2018/4/18 星期三 16:05:26
+			Form表单数据：
+			URL参数：?user_name=admin&password=123456
+					 
+2018-04-18 16:05:26.9342 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:05:26.9342 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) in 9.2742ms 
+2018-04-18 16:05:26.9342 | Info | Request finished in 23.3049ms 200 application/json; charset=utf-8 
+2018-04-18 16:06:26.1426 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 16:06:38.8933 | Info | 
+			Action执行时间监控：
+			ControllerName：HomeController
+			ActionName:Get
+			开始时间：2018/4/18 星期三 16:06:38
+			Form表单数据：
+			URL参数：
+					 
+2018-04-18 16:06:46.7118 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:06:46.9438 | Info | Executed action Tibos.Api.Controllers.HomeController.Get (Tibos.Api) in 20322.6489ms 
+2018-04-18 16:06:46.9698 | Info | Request finished in 20880.6569ms 200 application/json; charset=utf-8 
+2018-04-18 16:06:46.9898 | Info | Request starting HTTP/1.1 GET http://localhost:7075/favicon.ico   
+2018-04-18 16:06:47.0078 | Info | Request finished in 16.7187ms 404  
+2018-04-18 16:07:00.3836 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/user/gettoken?user_name=admin&password=123456   
+2018-04-18 16:07:04.2048 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetToken
+			开始时间：2018/4/18 星期三 16:07:04
+			Form表单数据：
+			URL参数：?user_name=admin&password=123456
+					 
+2018-04-18 16:08:06.7304 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 16:08:07.0034 | Info | Policy execution successful. 
+2018-04-18 16:08:07.0154 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 16:08:07.0154 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 16:08:07.0324 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 29.6546ms 
+2018-04-18 16:08:07.0324 | Info | Request finished in 358.29ms 200  
+2018-04-18 16:08:07.0544 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 16:08:07.0544 | Info | Policy execution successful. 
+2018-04-18 16:08:09.2745 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 16:08:09
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 16:08:09.2885 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:08:09.3355 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 2277.5596ms 
+2018-04-18 16:08:09.3395 | Info | Request finished in 2285.6022ms 200 application/json; charset=utf-8 
+2018-04-18 16:08:16.5029 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/user/gettoken?user_name=admin&password=123456   
+2018-04-18 16:08:16.5189 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetToken
+			开始时间：2018/4/18 星期三 16:08:16
+			Form表单数据：
+			URL参数：?user_name=admin&password=123456
+					 
+2018-04-18 16:08:16.5189 | Info | Executing action method Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) with arguments (admin, 123456) - ModelState is Valid 
+2018-04-18 16:08:16.8549 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:08:16.8579 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) in 346.1659ms 
+2018-04-18 16:08:16.8579 | Info | Request finished in 363.656ms 200 application/json; charset=utf-8 
+2018-04-18 16:08:20.9982 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 16:08:20.9982 | Info | Policy execution successful. 
+2018-04-18 16:08:20.9982 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 16:08:20.9982 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 16:08:20.9982 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 3.168ms 
+2018-04-18 16:08:20.9982 | Info | Request finished in 5.6602ms 200  
+2018-04-18 16:08:21.0152 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 16:08:21.0152 | Info | Policy execution successful. 
+2018-04-18 16:08:21.0152 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 16:08:21
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 16:08:21.0232 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 6.2604ms 
+2018-04-18 16:08:21.2312 | Info | Request finished in 216.6121ms 500 text/html; charset=utf-8 
+2018-04-18 16:09:13.3072 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 16:09:19.5315 | Info | 
+			Action执行时间监控：
+			ControllerName：HomeController
+			ActionName:Get
+			开始时间：2018/4/18 星期三 16:09:19
+			Form表单数据：
+			URL参数：
+					 
+2018-04-18 16:09:19.5615 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:09:19.7915 | Info | Executed action Tibos.Api.Controllers.HomeController.Get (Tibos.Api) in 6057.3788ms 
+2018-04-18 16:09:19.8325 | Info | Request finished in 6562.1725ms 200 application/json; charset=utf-8 
+2018-04-18 16:09:19.8515 | Info | Request starting HTTP/1.1 GET http://localhost:7075/favicon.ico   
+2018-04-18 16:09:19.8676 | Info | Request finished in 16.343ms 404  
+2018-04-18 16:09:25.9399 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 16:09:25.9989 | Info | Policy execution successful. 
+2018-04-18 16:09:25.9989 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 16:09:26.0149 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 16:09:26.0149 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 26.4906ms 
+2018-04-18 16:09:26.0279 | Info | Request finished in 86.0939ms 200  
+2018-04-18 16:09:26.0279 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 16:09:26.0279 | Info | Policy execution successful. 
+2018-04-18 16:09:28.9411 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 16:09:28
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 16:09:28.9461 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:09:28.9461 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 2909.3294ms 
+2018-04-18 16:09:29.0271 | Info | Request finished in 2927.1647ms 200 application/json; charset=utf-8 
+2018-04-18 16:09:35.6355 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 16:09:35.6605 | Info | Policy execution successful. 
+2018-04-18 16:09:35.6605 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 16:09:35.6755 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 16:09:35.6755 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 35.3677ms 
+2018-04-18 16:09:35.6945 | Info | Request finished in 50.5986ms 200  
+2018-04-18 16:09:35.7055 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 16:09:35.7055 | Info | Policy execution successful. 
+2018-04-18 16:09:38.7946 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 16:09:38
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 16:09:38.7946 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:09:38.8126 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 3096.3339ms 
+2018-04-18 16:09:38.8316 | Info | Request finished in 3112.3855ms 200 application/json; charset=utf-8 
+2018-04-18 16:09:55.0706 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 16:09:55.0766 | Info | Policy execution successful. 
+2018-04-18 16:09:55.1016 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 16:09:55.1076 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 16:09:55.1246 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 36.4081ms 
+2018-04-18 16:09:55.1246 | Info | Request finished in 60.7605ms 200  
+2018-04-18 16:09:55.1426 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 16:09:55.1426 | Info | Policy execution successful. 
+2018-04-18 16:10:07.4493 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 16:09:59
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 16:10:38.4120 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:10:38.4120 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 43269.9026ms 
+2018-04-18 16:10:38.4640 | Info | Request finished in 43310.9627ms 200 application/json; charset=utf-8 
+2018-04-18 16:10:43.4773 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/user/gettoken?user_name=admin&password=123456   
+2018-04-18 16:10:44.5014 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetToken
+			开始时间：2018/4/18 星期三 16:10:44
+			Form表单数据：
+			URL参数：?user_name=admin&password=123456
+					 
+2018-04-18 16:10:44.5724 | Info | Executing action method Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) with arguments (admin, 123456) - ModelState is Valid 
+2018-04-18 16:10:44.9124 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:10:44.9184 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) in 1430.1679ms 
+2018-04-18 16:10:44.9184 | Info | Request finished in 1452.7189ms 200 application/json; charset=utf-8 
+2018-04-18 16:10:49.0717 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 16:10:49.0717 | Info | Policy execution successful. 
+2018-04-18 16:10:49.0717 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 16:10:49.0877 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 16:10:49.0877 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 16.627ms 
+2018-04-18 16:10:49.1027 | Info | Request finished in 27.4725ms 200  
+2018-04-18 16:10:49.1027 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 16:10:49.1177 | Info | Policy execution successful. 
+2018-04-18 16:10:50.4777 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 16:10:50
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 16:14:19.3447 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 16:14:19.6037 | Info | Policy execution successful. 
+2018-04-18 16:14:19.6147 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 16:14:19.6227 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 16:14:19.6227 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 26.2686ms 
+2018-04-18 16:14:19.6387 | Info | Request finished in 340.3415ms 200  
+2018-04-18 16:14:19.6387 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 16:14:19.6387 | Info | Policy execution successful. 
+2018-04-18 16:14:21.8328 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 16:14:21
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 16:14:21.8448 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:14:21.8898 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 2240.2209ms 
+2018-04-18 16:14:21.8898 | Info | Request finished in 2247.0238ms 200 application/json; charset=utf-8 
+2018-04-18 16:14:25.9831 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/user/gettoken?user_name=admin&password=123456   
+2018-04-18 16:14:25.9981 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetToken
+			开始时间：2018/4/18 星期三 16:14:25
+			Form表单数据：
+			URL参数：?user_name=admin&password=123456
+					 
+2018-04-18 16:14:26.0061 | Info | Executing action method Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) with arguments (admin, 123456) - ModelState is Valid 
+2018-04-18 16:14:26.3091 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:14:26.3091 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) in 319.3854ms 
+2018-04-18 16:14:26.3091 | Info | Request finished in 333.6431ms 200 application/json; charset=utf-8 
+2018-04-18 16:14:29.3703 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/user/gettoken?user_name=admin&password=123456   
+2018-04-18 16:14:29.3723 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetToken
+			开始时间：2018/4/18 星期三 16:14:29
+			Form表单数据：
+			URL参数：?user_name=admin&password=123456
+					 
+2018-04-18 16:14:29.3723 | Info | Executing action method Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) with arguments (admin, 123456) - ModelState is Valid 
+2018-04-18 16:14:29.4043 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:14:29.4043 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) in 33.3946ms 
+2018-04-18 16:14:29.4043 | Info | Request finished in 36.2753ms 200 application/json; charset=utf-8 
+2018-04-18 16:14:30.8823 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/user/gettoken?user_name=admin&password=123456   
+2018-04-18 16:14:30.8823 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetToken
+			开始时间：2018/4/18 星期三 16:14:30
+			Form表单数据：
+			URL参数：?user_name=admin&password=123456
+					 
+2018-04-18 16:14:30.8863 | Info | Executing action method Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) with arguments (admin, 123456) - ModelState is Valid 
+2018-04-18 16:14:30.9143 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:14:30.9143 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) in 30.7768ms 
+2018-04-18 16:14:30.9163 | Info | Request finished in 33.7305ms 200 application/json; charset=utf-8 
+2018-04-18 16:14:33.9045 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 16:14:33.9045 | Info | Policy execution successful. 
+2018-04-18 16:14:33.9045 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 16:14:33.9045 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 16:14:33.9045 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 3.2476ms 
+2018-04-18 16:14:33.9045 | Info | Request finished in 6.4327ms 200  
+2018-04-18 16:14:33.9175 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 16:14:33.9175 | Info | Policy execution successful. 
+2018-04-18 16:14:33.9175 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 16:14:33
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 16:14:33.9175 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 5.049ms 
+2018-04-18 16:14:34.1155 | Info | Request finished in 197.7983ms 500 text/html; charset=utf-8 
+2018-04-18 16:23:50.2463 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 16:37:01.6556 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 16:37:08.3720 | Info | 
+			Action执行时间监控：
+			ControllerName：HomeController
+			ActionName:Get
+			开始时间：2018/4/18 星期三 16:37:08
+			Form表单数据：
+			URL参数：
+					 
+2018-04-18 16:37:08.4120 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:37:08.6220 | Info | Executed action Tibos.Api.Controllers.HomeController.Get (Tibos.Api) in 6619.0988ms 
+2018-04-18 16:37:08.6440 | Info | Request finished in 7049.2329ms 200 application/json; charset=utf-8 
+2018-04-18 16:37:08.6650 | Info | Request starting HTTP/1.1 GET http://localhost:7075/favicon.ico   
+2018-04-18 16:37:08.6830 | Info | Request finished in 16.9057ms 404  
+2018-04-18 16:37:14.5103 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 16:37:32.3564 | Info | 
+			Action执行时间监控：
+			ControllerName：HomeController
+			ActionName:Get
+			开始时间：2018/4/18 星期三 16:37:29
+			Form表单数据：
+			URL参数：
+					 
+2018-04-18 16:37:47.5002 | Info | Executing action method Tibos.Api.Controllers.HomeController.Get (Tibos.Api) with arguments ((null)) - ModelState is Valid 
+2018-04-18 16:38:58.8403 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 16:39:07.6008 | Info | 
+			Action执行时间监控：
+			ControllerName：HomeController
+			ActionName:Get
+			开始时间：2018/4/18 星期三 16:39:07
+			Form表单数据：
+			URL参数：
+					 
+2018-04-18 16:39:13.6591 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 16:39:13.8622 | Info | Executed action Tibos.Api.Controllers.HomeController.Get (Tibos.Api) in 14687.9826ms 
+2018-04-18 16:39:13.9462 | Info | Request finished in 15165.9345ms 200 application/json; charset=utf-8 
+2018-04-18 16:39:13.9652 | Info | Request starting HTTP/1.1 GET http://localhost:7075/favicon.ico   
+2018-04-18 16:39:13.9822 | Info | Request finished in 16.9455ms 404  
+2018-04-18 16:39:19.9735 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 16:39:24.6858 | Info | 
+			Action执行时间监控：
+			ControllerName：HomeController
+			ActionName:Get
+			开始时间：2018/4/18 星期三 16:39:24
+			Form表单数据：
+			URL参数：
+					 
+2018-04-18 16:39:27.8180 | Info | Executing action method Tibos.Api.Controllers.HomeController.Get (Tibos.Api) with arguments ((null)) - ModelState is Valid 
+2018-04-18 16:46:27.1279 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 16:46:40.2957 | Info | 
+			Action执行时间监控：
+			ControllerName：HomeController
+			ActionName:Get
+			开始时间：2018/4/18 星期三 16:46:40
+			Form表单数据：
+			URL参数：
+					 
+2018-04-18 16:46:45.4120 | Info | Executing action method Tibos.Api.Controllers.HomeController.Get (Tibos.Api) with arguments ((null)) - ModelState is Valid 
+2018-04-18 16:53:39.4457 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 16:53:43.4879 | Info | Executing action method Tibos.Api.Controllers.HomeController.Get (Tibos.Api) with arguments ((null)) - ModelState is Valid 
+2018-04-18 17:06:00.2000 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 17:06:07.5835 | Info | Executing action method Tibos.Api.Controllers.HomeController.Get (Tibos.Api) with arguments ((null)) - ModelState is Valid 
+2018-04-18 17:06:07.9195 | Info | Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+2018-04-18 17:06:08.1015 | Info | Executed action Tibos.Api.Controllers.HomeController.Get (Tibos.Api) in 7449.6302ms 
+2018-04-18 17:06:08.1145 | Info | Request finished in 8018.5621ms 200 application/json; charset=utf-8 
+2018-04-18 17:06:08.1385 | Info | Request starting HTTP/1.1 GET http://localhost:7075/favicon.ico   
+2018-04-18 17:06:08.1575 | Info | Request finished in 21.0111ms 404  
+2018-04-18 17:06:22.0963 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 17:33:06.4501 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 17:33:12.3144 | Info | Executing action method Tibos.Api.Controllers.HomeController.Get (Tibos.Api) with arguments ((null)) - ModelState is Valid 
+2018-04-18 17:33:12.6514 | Info | Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+2018-04-18 17:33:12.8424 | Info | Executed action Tibos.Api.Controllers.HomeController.Get (Tibos.Api) in 5917.3705ms 
+2018-04-18 17:33:12.8604 | Info | Request finished in 6472.4282ms 200 application/json; charset=utf-8 
+2018-04-18 17:33:12.8854 | Info | Request starting HTTP/1.1 GET http://localhost:7075/favicon.ico   
+2018-04-18 17:33:12.9024 | Info | Request finished in 16.9623ms 404  
+2018-04-18 17:34:01.5222 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 17:34:02.0122 | Info | Executed action Tibos.Api.Controllers.HomeController.Get (Tibos.Api) in 52.1546ms 
+2018-04-18 17:34:02.3693 | Info | Request finished in 908.3515ms 500 text/html; charset=utf-8 
+2018-04-18 17:34:02.4343 | Info | Request starting HTTP/1.1 GET http://localhost:7075/favicon.ico   
+2018-04-18 17:34:02.4573 | Info | Request finished in 25.8935ms 404  
+2018-04-18 17:35:28.0472 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 17:35:31.5434 | Info | Executing action method Tibos.Api.Controllers.HomeController.Get (Tibos.Api) with arguments ((null)) - ModelState is Valid 
+2018-04-18 17:38:13.4716 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 17:38:19.7370 | Info | Executing action method Tibos.Api.Controllers.HomeController.Get (Tibos.Api) with arguments ((null)) - ModelState is Valid 
+2018-04-18 17:38:20.0420 | Info | Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+2018-04-18 17:38:20.2300 | Info | Executed action Tibos.Api.Controllers.HomeController.Get (Tibos.Api) in 6311.2569ms 
+2018-04-18 17:38:20.2410 | Info | Request finished in 6836.483ms 200 application/json; charset=utf-8 
+2018-04-18 17:38:20.2650 | Info | Request starting HTTP/1.1 GET http://localhost:7075/favicon.ico   
+2018-04-18 17:38:20.2900 | Info | Request finished in 18.8654ms 404  
+2018-04-18 17:40:39.6390 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 17:41:45.6077 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 17:42:32.7184 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/home   
+2018-04-18 17:44:57.6527 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 17:44:59.6028 | Info | Policy execution successful. 
+2018-04-18 17:44:59.6148 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 17:44:59.6148 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 17:44:59.6278 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 26.9015ms 
+2018-04-18 17:44:59.6278 | Info | Request finished in 2032.2429ms 200  
+2018-04-18 17:44:59.6488 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 17:44:59.6488 | Info | Policy execution successful. 
+2018-04-18 17:44:59.9179 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 17:44:59
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 17:44:59.9289 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 17:44:59.9769 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 325.119ms 
+2018-04-18 17:44:59.9769 | Info | Request finished in 332.8615ms 200 application/json; charset=utf-8 
+2018-04-18 17:45:09.8124 | Info | Request starting HTTP/1.1 GET http://localhost:7075/api/user/gettoken?user_name=admin&password=123456   
+2018-04-18 17:45:09.8264 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetToken
+			开始时间：2018/4/18 星期三 17:45:09
+			Form表单数据：
+			URL参数：?user_name=admin&password=123456
+					 
+2018-04-18 17:45:09.8344 | Info | Executing action method Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) with arguments (admin, 123456) - ModelState is Valid 
+2018-04-18 17:45:10.1424 | Info | Executing JsonResult, writing value Tibos.Common.Json. 
+2018-04-18 17:45:10.1424 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetToken (Tibos.Api) in 324.9896ms 
+2018-04-18 17:45:10.1424 | Info | Request finished in 338.3155ms 200 application/json; charset=utf-8 
+2018-04-18 17:45:13.0206 | Info | Request starting HTTP/1.1 OPTIONS http://localhost:7075/api/user/getlist   
+2018-04-18 17:45:13.0206 | Info | Policy execution successful. 
+2018-04-18 17:45:13.0206 | Info | Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter'. 
+2018-04-18 17:45:13.0206 | Info | Executing HttpStatusCodeResult, setting HTTP status code 200 
+2018-04-18 17:45:13.0206 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 3.5969ms 
+2018-04-18 17:45:13.0266 | Info | Request finished in 6.3839ms 200  
+2018-04-18 17:45:13.0266 | Info | Request starting HTTP/1.1 POST http://localhost:7075/api/user/getlist application/json; charset=UTF-8 77 
+2018-04-18 17:45:13.0266 | Info | Policy execution successful. 
+2018-04-18 17:45:13.0266 | Info | 
+			Action执行时间监控：
+			ControllerName：UserController
+			ActionName:GetList
+			开始时间：2018/4/18 星期三 17:45:13
+			Form表单数据：{"user_name":"admin","order":[{"searchType":1,"value":"id"}],"paging":[1,10]}
+			URL参数：
+					 
+2018-04-18 17:45:13.0926 | Info | Executing action method Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) with arguments (System.Collections.Generic.Dictionary`2[System.String,System.Object]) - ModelState is Valid 
+2018-04-18 17:45:13.2426 | Info | Executing JsonResult, writing value System.Collections.Generic.List`1[Tibos.Domain.Users]. 
+2018-04-18 17:45:13.2636 | Info | Executed action Tibos.Api.Areas.User.Controllers.UserController.GetList (Tibos.Api) in 226.6139ms 
+2018-04-18 17:45:13.2636 | Info | Request finished in 229.9946ms 200 application/json; charset=utf-8 

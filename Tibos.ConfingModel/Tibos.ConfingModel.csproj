@@ -25,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="config\nlog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="json\TokenConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

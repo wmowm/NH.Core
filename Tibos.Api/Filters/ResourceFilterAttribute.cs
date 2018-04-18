@@ -19,12 +19,12 @@ namespace Tibos.Api.Filters
  
          public void OnResourceExecuted(ResourceExecutedContext context)
          {
-             logger.LogInformation("ResourceFilter Executed!");
+
          }
  
          public void OnResourceExecuting(ResourceExecutingContext context)
          {
-             logger.LogInformation("ResourceFilter Executing!");
+
          }
     }
 }

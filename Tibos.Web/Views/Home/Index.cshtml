@@ -2,29 +2,33 @@
     ViewData["Title"] = "Home Page";
 }
 
-@ViewBag.res
+<button onclick="testPost()">提交测试</button>
 
 
 <script src="~/js/jquery.min.js"></script>
 <script>
-    var mm = {
-        "user_name": "admin",
-        //"mobile": "123456",
-        "order": [{ "searchType": 1,"value": "id" }],
-        "paging": [1, 10]
-    };
-    var jj = JSON.stringify(mm);
-    var test;
-    $.ajax({
-        type: "post",
-        url: "http://localhost:7075/api/user/getlist",
-        data: JSON.stringify(mm),
-        async: false,
-        contentType: 'application/json; charset=urf-8',
-        success: function (data, status)
-        {
-            test = data;
-            alert(data);
-         }
-    });
+    var mm;
+    function testPost() {
+        var param = {
+            "user_name": "admin",
+            //"mobile": "123456",
+            "order": [{ "searchType": 1, "value": "id" }],
+            "paging": [1, 10]
+        };
+        $.ajax({
+            type: "post",
+            url: "http://localhost:7075/api/user/getlist",
+            data: JSON.stringify(param),
+            async: false,
+            contentType: 'application/json; charset=urf-8',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("token", "C86A6FA1BE3008DA70D3CC3E331DCF33");
+            },
+            success: function (data, status) {
+                alert(data);
+                mm = data;
+            }
+        });
+    }
+
 </script>

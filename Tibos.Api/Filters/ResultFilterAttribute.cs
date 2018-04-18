@@ -18,12 +18,12 @@ namespace Tibos.Api.Filters
  
          public void OnResultExecuted(ResultExecutedContext context)
          {
-             logger.LogInformation("ResultFilter Executd!");
+
          }
  
          public void OnResultExecuting(ResultExecutingContext context)
          {
-             logger.LogInformation("ResultFilter Executing!");
+
          }
     }
 }
