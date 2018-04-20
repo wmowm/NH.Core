@@ -16,6 +16,7 @@ namespace Tibos.Api.Filters
 {
     public class ActionFilterAttribute : Attribute, IActionFilter
     {
+        
         private readonly ILogger<ActionFilterAttribute> logger;
         private readonly IMemoryCache _Cache;
         private readonly UsersIService _UsersService;

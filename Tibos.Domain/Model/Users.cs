@@ -225,6 +225,13 @@ namespace Tibos.Domain
             get;
             set;
         }
-
+        /// <summary>
+        /// 是否删除
+        /// </summary>
+        public virtual int? is_del
+        {
+            get;
+            set;
+        }
     }
 }

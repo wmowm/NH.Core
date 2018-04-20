@@ -30,6 +30,6 @@
 		<property name="Invite" column="Invite" type="int"  />
 		<property name="LoginTime" column="LoginTime" type="DateTime"  />
 		<property name="YB" column="YB" type="int"  />
-				
+    <property name="is_del" column="is_del" type="int"  />
 	</class>
 </hibernate-mapping>

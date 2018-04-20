@@ -129,8 +129,7 @@ namespace Tibos.Api
             });
             app.UseAuthentication();
             loggerFactory.AddNLog();//添加NLog
-            env.ConfigureNLog(@"bin\Debug\netcoreapp2.0\config\nlog.config");//读取Nlog配置文件
-
+            env.ConfigureNLog(AppContext.BaseDirectory + "config/nlog.config");//读取Nlog配置文件
         }
     }
 }

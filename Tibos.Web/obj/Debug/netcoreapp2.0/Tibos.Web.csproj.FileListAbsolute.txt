@@ -79,3 +79,4 @@ F:\GitProduct\NH.Core\Tibos.Web\obj\Debug\netcoreapp2.0\Tibos.Web.AssemblyInfoIn
 F:\GitProduct\NH.Core\Tibos.Web\obj\Debug\netcoreapp2.0\Tibos.Web.AssemblyInfo.cs
 F:\GitProduct\NH.Core\Tibos.Web\obj\Debug\netcoreapp2.0\Tibos.Web.dll
 F:\GitProduct\NH.Core\Tibos.Web\obj\Debug\netcoreapp2.0\Tibos.Web.pdb
+F:\GitProduct\NH.Core\Tibos.Web\bin\Debug\netcoreapp2.0\config\nlog.config

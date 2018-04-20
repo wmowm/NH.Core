@@ -28,7 +28,7 @@ namespace Tibos.Api.Controllers
             //Users m_user = new Users();
             //m_user.user_name = "这是测试哦";
             //_UsersService.Save(m_user);
-           var res = _UsersService.Get(1);
+            var res = _UsersService.Get(1);
             return new string[] { res.id.ToString(), res.user_name };
         }
 

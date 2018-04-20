@@ -1,0 +1,15 @@
+F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Release\netcoreapp2.0\sqlconfig\mysql.cfg.xml
+F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Release\netcoreapp2.0\sqlconfig\sqlserver.cfg.xml
+F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Release\netcoreapp2.0\config\nlog.config
+F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Release\netcoreapp2.0\json\ManageConfig.json
+F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Release\netcoreapp2.0\json\TokenConfig.json
+F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Release\netcoreapp2.0\sqlconfig\sqlite.cfg.xml
+F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Release\netcoreapp2.0\Tibos.ConfingModel.deps.json
+F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Release\netcoreapp2.0\Tibos.ConfingModel.dll
+F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Release\netcoreapp2.0\Tibos.ConfingModel.pdb
+F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Release\netcoreapp2.0\Tibos.ConfingModel.csprojResolveAssemblyReference.cache
+F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Release\netcoreapp2.0\Tibos.ConfingModel.csproj.CoreCompileInputs.cache
+F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Release\netcoreapp2.0\Tibos.ConfingModel.AssemblyInfoInputs.cache
+F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Release\netcoreapp2.0\Tibos.ConfingModel.AssemblyInfo.cs
+F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Release\netcoreapp2.0\Tibos.ConfingModel.dll
+F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Release\netcoreapp2.0\Tibos.ConfingModel.pdb

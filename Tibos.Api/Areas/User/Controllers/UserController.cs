@@ -105,6 +105,7 @@ namespace Tibos.Api.Areas.User.Controllers
         {
             return await Task.Run<JsonResult>(() =>
             {
+                Json json = new Common.Json();
                 //自定义参数模板
                 List<SearchTemplate> st = new List<SearchTemplate>();
                 //自定义排序模板
@@ -138,7 +139,8 @@ namespace Tibos.Api.Areas.User.Controllers
                     //后面可以根据业务拓展查询条件
                 }
                 var list = _UsersService.GetList(st, order);
-                return Json(list);
+                json.data = list;
+                return Json(json);
             });
         }
 
@@ -147,8 +149,17 @@ namespace Tibos.Api.Areas.User.Controllers
         {
             return await Task.Run<JsonResult>(() =>
             {
-
-                return Json("add");
+                Json json = new Common.Json();
+                if (string.IsNullOrEmpty(user.user_name))
+                {
+                    json.msg = "用户名不能为空!";
+                    json.status = -1;
+                    return Json(json);
+                }
+                var id = _UsersService.Save(user);
+                json.data = id;
+                json.msg = "添加成功!";
+                return Json(json);
             });
         }
 
@@ -157,18 +168,28 @@ namespace Tibos.Api.Areas.User.Controllers
         {
             return await Task.Run<JsonResult>(() =>
             {
-
-                return Json(user);
+                Json json = new Common.Json();
+                _UsersService.Update(user);
+                json.msg = "修改成功!";
+                return Json(json);
             });
         }
 
         [HttpDelete]
-        public async Task<JsonResult> Delete(int id)
+        public async Task<JsonResult> Delete(string ids)
         {
             return await Task.Run<JsonResult>(() =>
             {
-
-                return Json("成功删除了一条数据");
+                //自定义返回json对象
+                Json json = new Json();
+                foreach (var id in ids.Split(new char[] { ',' }))
+                {
+                    var m_nt = _UsersService.Get(Convert.ToInt32(id));
+                    m_nt.is_del = 1;
+                    _UsersService.Update(m_nt);
+                }
+                json.msg = "成功删除" + ids.Split(new char[] { ',' }).Length + "条记录!";
+                return Json(json);
             });
         }
     }
