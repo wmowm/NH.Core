@@ -13,6 +13,7 @@
         empty-cells: show;
         border-collapse: collapse;
     }
+
     td {
         height: 30px;
     }
@@ -27,6 +28,7 @@
         border: 1px solid #cad9ea;
         color: #666;
     }
+
         .table th {
             background-repeat: repeat-x;
             height: 30px;
@@ -42,7 +44,8 @@
         }
 </style>
 
-
+GUID: @ViewData["GUID"]
+<br />
 <button onclick="get()">获取token</button>
 
 <button onclick="getlist()">获取用户列表</button>
@@ -157,7 +160,7 @@
 
     function put() {
         var param = {
-            "id":"3",
+            "id": "3",
             "user_name": "test",
             "mobile": "666666",
             "password": "6666"

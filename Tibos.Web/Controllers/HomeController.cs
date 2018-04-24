@@ -17,6 +17,7 @@ namespace Web.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["GUID"] = Guid.NewGuid();
             return View();
         }
         public IActionResult Login()

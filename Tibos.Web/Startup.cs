@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Tibos.Web.Filters;
 
 namespace Web
 {
@@ -22,11 +23,21 @@ namespace Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDistributedMemoryCache();
+
+            //权限验证
+            services.AddAuthorization();
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromSeconds(30); //配置session的有效时间,单位秒
             });
-            services.AddMvc();
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(typeof(ResourceFilterAttribute));
+                options.Filters.Add(typeof(ActionFilterAttribute));
+                options.Filters.Add(typeof(ExceptionFilterAttribute));
+                options.Filters.Add(typeof(ResultFilterAttribute));
+
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +62,7 @@ namespace Web
                    template: "{controller}/{action}/{id?}",
                    defaults: new { controller = "Home", action = "Index" });
             });
+            app.UseAuthentication();
         }
     }
 }

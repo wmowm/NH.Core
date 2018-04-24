@@ -23,3 +23,4 @@ F:\GitProduct\NH.Core\Tibos.Domain\obj\Debug\netcoreapp2.0\Tibos.Domain.Assembly
 F:\GitProduct\NH.Core\Tibos.Domain\obj\Debug\netcoreapp2.0\Tibos.Domain.AssemblyInfo.cs
 F:\GitProduct\NH.Core\Tibos.Domain\obj\Debug\netcoreapp2.0\Tibos.Domain.dll
 F:\GitProduct\NH.Core\Tibos.Domain\obj\Debug\netcoreapp2.0\Tibos.Domain.pdb
+F:\GitProduct\NH.Core\Tibos.Domain\obj\Debug\netcoreapp2.0\Tibos.Domain.csprojResolveAssemblyReference.cache
