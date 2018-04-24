@@ -7,7 +7,6 @@ F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Release\netcoreapp2.0\sqlconfig\sql
 F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Release\netcoreapp2.0\Tibos.ConfingModel.deps.json
 F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Release\netcoreapp2.0\Tibos.ConfingModel.dll
 F:\GitProduct\NH.Core\Tibos.ConfingModel\bin\Release\netcoreapp2.0\Tibos.ConfingModel.pdb
-F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Release\netcoreapp2.0\Tibos.ConfingModel.csprojResolveAssemblyReference.cache
 F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Release\netcoreapp2.0\Tibos.ConfingModel.csproj.CoreCompileInputs.cache
 F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Release\netcoreapp2.0\Tibos.ConfingModel.AssemblyInfoInputs.cache
 F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Release\netcoreapp2.0\Tibos.ConfingModel.AssemblyInfo.cs

@@ -17,12 +17,14 @@ namespace Web.Controllers
     {
         public IActionResult Index()
         {
-            UsersService b_user = new UsersService();
-            var res =  b_user.Get(1);
-            ViewBag.res = res.user_name;
             return View();
         }
         public IActionResult Login()
+        {
+            return View();
+        }
+
+        public IActionResult About()
         {
             return View();
         }

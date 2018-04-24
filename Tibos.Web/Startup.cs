@@ -44,12 +44,12 @@ namespace Web
             }
 
             app.UseStaticFiles();
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                   name: "default",
+                   template: "{controller}/{action}/{id?}",
+                   defaults: new { controller = "Home", action = "Index" });
             });
         }
     }
