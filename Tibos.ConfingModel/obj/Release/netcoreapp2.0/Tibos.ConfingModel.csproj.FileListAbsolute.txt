@@ -12,3 +12,4 @@ F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Release\netcoreapp2.0\Tibos.Confing
 F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Release\netcoreapp2.0\Tibos.ConfingModel.AssemblyInfo.cs
 F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Release\netcoreapp2.0\Tibos.ConfingModel.dll
 F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Release\netcoreapp2.0\Tibos.ConfingModel.pdb
+F:\GitProduct\NH.Core\Tibos.ConfingModel\obj\Release\netcoreapp2.0\Tibos.ConfingModel.csprojResolveAssemblyReference.cache

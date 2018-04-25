@@ -6,3 +6,4 @@ F:\GitProduct\NH.Core\Tibos.Domain\obj\Release\netcoreapp2.0\Tibos.Domain.Assemb
 F:\GitProduct\NH.Core\Tibos.Domain\obj\Release\netcoreapp2.0\Tibos.Domain.AssemblyInfo.cs
 F:\GitProduct\NH.Core\Tibos.Domain\obj\Release\netcoreapp2.0\Tibos.Domain.dll
 F:\GitProduct\NH.Core\Tibos.Domain\obj\Release\netcoreapp2.0\Tibos.Domain.pdb
+F:\GitProduct\NH.Core\Tibos.Domain\obj\Release\netcoreapp2.0\Tibos.Domain.csprojResolveAssemblyReference.cache
