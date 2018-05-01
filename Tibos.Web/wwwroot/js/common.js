@@ -1,4 +1,4 @@
-$.loading = function (bool, text) {
+ï»¿$.loading = function (bool, text) {
     var $loadingpage = parent.$("#loadingPage");
     var $loadingtext = $loadingpage.find('.loading-content');
     if (bool) {
@@ -11,9 +11,9 @@ $.loading = function (bool, text) {
     if (!!text) {
         $loadingtext.html(text);
     } else {
-        $loadingtext.html("Êı¾İ¼ÓÔØÖĞ£¬ÇëÉÔºó¡­");
+        $loadingtext.html("æ•°æ®åŠ è½½ä¸­ï¼Œè¯·ç¨åâ€¦");
     }
-    $loadingtext.css("left", (parent.$('body').width() - $loadingtext.width()) / 2 - 50);
+    $loadingtext.css("left", (parent.$('body').width() - $loadingtext.width()) / 2 + 50);
     $loadingtext.css("top", (parent.$('body').height() - $loadingtext.height()) / 2);
 }
 
@@ -31,7 +31,7 @@ $.dialog = function (msg, type) {
 
     });
     d.show();
-    //¹Ø±ÕÌáÊ¾Ä£Ì¬¿ò
+    //å…³é—­æç¤ºæ¨¡æ€æ¡†
     setTimeout(function () {
         d.close().remove();
     }, 2000);
@@ -48,9 +48,9 @@ function nameenter(t, src, id, mobile, wx, name, mode, sex) {
     res += "<p><i class='fa fa-phone'></i>" + mobile + "</p>";
     res += "<p><i class='fa fa-weixin'></i>" + wx + "</p>";
     if (mode != "null") {
-        res += "<p>Ä£Ê½:" + mode + "</p>";
+        res += "<p>æ¨¡å¼:" + mode + "</p>";
     }
-    res += "<a onclick=\"showInfo('/Student/GetStudentInfo/" + id + "','" + name + "','" + id + "')\">²é¿´¸ü¶à</a>";
+    res += "<a onclick=\"showInfo('/Student/GetStudentInfo/" + id + "','" + name + "','" + id + "')\">æŸ¥çœ‹æ›´å¤š</a>";
     res += "</div>";
 
     $(t).popover({
@@ -87,4 +87,15 @@ function showInfo(u, name, id) {
     $(r).append("<a href='javascript:;' class='J_menuTab active' data-id='" + id + "s2'>" + name + "<i class='fa fa-times-circle'></i></a>")
     var m = $(window.parent.document).find("#content-main");
     $(m).append("<iframe class='J_iframe' name='iframe3' width='100%' height='100%' src='" + u + "' frameborder='0' data-id='" + id + "s2' style='display: inline;'></iframe>");
+}
+
+
+//jsçš„å…¨å±€é…ç½®
+$.token = function ()
+{
+    return "4BE2830173AEB5D057505EB0E58DA2C1";
+}
+$.requestPath = function ()
+{
+    return "http://localhost:7075/";
 }

@@ -145,6 +145,7 @@
     function tips(data) {
         $("#spinners li").removeClass('active')
         if (data.status == "0") {
+            
             window.location.href = data.returnUrl;
         } else {
             $("#imgcode").attr("src", "/Home/GetAuthCode?time=" + Math.random());

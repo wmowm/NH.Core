@@ -26,5 +26,7 @@ namespace Tibos.Common
         public string returnUrl { get; set; }//跳转的页面
 
         public object data { get; set; }//数据
+
+        public int total { get; set; }//总条数
     }
 }

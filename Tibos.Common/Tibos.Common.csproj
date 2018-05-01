@@ -9,4 +9,10 @@
     <PackageReference Include="ZKWeb.System.Drawing" Version="4.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.caching.abstractions\2.0.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -53,3 +53,5 @@ F:\GitProduct\NH.Core\Tibos.Repository.Service\obj\Debug\netcoreapp2.0\Tibos.Rep
 F:\GitProduct\NH.Core\Tibos.Repository.Service\obj\Debug\netcoreapp2.0\Tibos.Repository.Service.AssemblyInfo.cs
 F:\GitProduct\NH.Core\Tibos.Repository.Service\obj\Debug\netcoreapp2.0\Tibos.Repository.Service.dll
 F:\GitProduct\NH.Core\Tibos.Repository.Service\obj\Debug\netcoreapp2.0\Tibos.Repository.Service.pdb
+F:\GitProduct\NH.Core\Tibos.Repository.Service\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Caching.Abstractions.dll
+F:\GitProduct\NH.Core\Tibos.Repository.Service\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Caching.Abstractions.xml

@@ -1,7 +1,127 @@
-﻿@{
-    ViewData["Title"] = "About";
-}
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<p>Use this area to provide additional information.</p>
+    <title>我的开源之旅</title>
+    <link href="~/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="~/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="~/css/animate.min.css" rel="stylesheet">
+    <link href="~/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+</head>
+<body class="gray-bg">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrapper wrapper-content">
+                <div class="row animated fadeInRight">
+                    <div class="col-sm-12">
+                        <div class="ibox float-e-margins">
+                            <div class="text-center float-e-margins p-md">
+                                <span>预览：</span>
+                                <a href="#" class="btn btn-xs btn-primary" id="lightVersion">浅色</a>
+                                <a href="#" class="btn btn-xs btn-primary" id="darkVersion">深色</a>
+                                <a href="#" class="btn btn-xs btn-primary" id="leftVersion">布局切换</a>
+                            </div>
+                            <div class="" id="ibox-content">
+                                <div id="vertical-timeline" class="vertical-container light-timeline">
+                                    <div class="vertical-timeline-block">
+                                        <div class="vertical-timeline-icon navy-bg">
+                                            <i class="fa fa-file-text"></i>
+                                        </div>
+                                        <div class="vertical-timeline-content">
+                                            <h2>说明</h2>
+                                            <p>
+                                                2016/11/11日 发布一个版本,目前这个项目只有本人一人开发,每天都会更新,现在(11/18)已经提交44个版本了,感兴趣的欢迎加入,QQ:505613913<br />
+                                                测试项目的时候,请注意一下几点<br />
+                                                1.不要随意删除核心数据<br />
+                                                2.不要发布违法言论<br />
+                                                3.代码完全开源,有需要的可以去下载 https://git.oschina.net/tibos/LSJ_NHibernate
+                                            </p>
+                                            <span class="vertical-date">
+                                                <small>2016年11月11日</small>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="vertical-timeline-block">
+                                        <div class="vertical-timeline-icon blue-bg">
+                                            <i class="fa fa-file-text"></i>
+                                        </div>
+                                        <div class="vertical-timeline-content">
+                                            <h2>权限系统</h2>
+                                            <p>
+                                                1.新增权限列表<br>
+                                                2.新增角色列表<br>
+                                                3.新增管理员列表<br>
+                                                4.新增NHibernate多对一关联查询<br>
+                                                5.新增AuthorizeFilterAttribute 权限拦截器<br>
+                                                5.新增错误处理机制
+                                            </p>
+                                            <span class="vertical-date">
+                                                <small>2016年11月14日</small>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="vertical-timeline-block">
+                                        <div class="vertical-timeline-icon lazur-bg">
+                                            <i class="fa fa-file-text"></i>
+                                        </div>
+                                        <div class="vertical-timeline-content">
+                                            <h2>日志系统</h2>
+                                            <p>
+                                                1.新增操作日志列表<br>
+                                                2.新增Log4Net日志系统(日志文件会保存在E:\Log\nh)<br>
+                                                3.修改.Net对html拦截BUG<br>
+                                                4.新增权限按钮会跟随对应权限显示隐藏<br>
+                                            </p>
+                                            <span class="vertical-date"><small>2016年11月18日</small></span>
+                                        </div>
+                                    </div>
+                                    <div class="vertical-timeline-block">
+                                        <div class="vertical-timeline-icon yellow-bg">
+                                            <i class="fa fa-file-text"></i>
+                                        </div>
+                                        <div class="vertical-timeline-content">
+                                            <h2>数据备份</h2>
+                                            <p>
+                                                1.修复修改或者添加,会出现白色层<br>
+                                                2.新增数据备份功能<br>
+                                                3.修改一系列bug<br>
+                                                4.登录进去,点击菜单会出现全屏现象(还未修复)<br>
+                                            </p>
+                                            <span class="vertical-date"><small>2016年11月24日</small></span>
+                                        </div>
+                                    </div>
+                                    <div class="vertical-timeline-block">
+                                        <div class="vertical-timeline-icon blue-bg">
+                                            <i class="fa fa-file-text"></i>
+                                        </div>
+                                        <div class="vertical-timeline-content">
+                                            <h2>资讯管理</h2>
+                                            <p>
+                                                1.新增富文本编辑器<br>
+                                                2.新增图片上传功能<br>
+                                                3.修改一堆BUG<br>
+                                                4.新增数据库源文件,代码生成器模板,框架流程图,简要说明<br>
+                                            </p>
+                                            <span class="vertical-date">
+                                                <small>2016年12月8日</small>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/jquery.min.js?v=2.1.4"></script>
+    <script src="~/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="~/js/content.min.js?v=1.0.0"></script>
+    <script>
+        $(document).ready(function () { $("#lightVersion").click(function (event) { event.preventDefault(); $("#ibox-content").removeClass("ibox-content"); $("#vertical-timeline").removeClass("dark-timeline"); $("#vertical-timeline").addClass("light-timeline") }); $("#darkVersion").click(function (event) { event.preventDefault(); $("#ibox-content").addClass("ibox-content"); $("#vertical-timeline").removeClass("light-timeline"); $("#vertical-timeline").addClass("dark-timeline") }); $("#leftVersion").click(function (event) { event.preventDefault(); $("#vertical-timeline").toggleClass("center-orientation") }) });
+    </script>
+</body>
+</html>

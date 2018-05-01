@@ -1,0 +1,123 @@
+﻿<link href="~/js/prettify/prettify.css" rel="stylesheet" />
+<link href="~/css/bootstrap-table.css" rel="stylesheet" />
+<link href="~/css/bootstrap.css" rel="stylesheet" />
+<link href="~/css/wx.css" rel="stylesheet" />
+<link href="~/css/lsj.css" rel="stylesheet" />
+
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/prettify/prettify.js"></script>
+<script src="~/js/lsj.js"></script>
+
+
+@{
+    var list_wiki = ViewData["list_wiki"] as List<Domain.Wiki>;
+    DAO.BLL.B_Wiki b_wiki = new DAO.BLL.B_Wiki();
+    Domain.Wiki m = b_wiki.Get(13);
+}
+
+<body onload="prettyPrint()">
+    <div class="headWrap">
+        <div class="header" id="header">
+            <div class="inner">
+                <a class="logo" href="#"><img src="~/img/logo.png" alt="微信公众平台开发者文档"></a>
+            </div>
+        </div>
+    </div>		
+    <div style="margin-top:100px;" class="mainwrapper" id="documentation">
+        <div class="inner">
+
+            <div id="mw-panel">
+                @{
+                    foreach (var item in list_wiki)
+                    {
+                        <div id="@item.id" class="portal">
+                            <h5><span class="portal_arrow"></span>@item.title</h5>
+                            <div class="body" style="display: none;">
+                                <ul></ul>
+                            </div>
+                        </div>
+                    }
+
+                }
+
+            </div>
+            <div id="content">
+                <div class="content_hd">
+                    <h2 id="firstHeading" class="firstHeading">首页</h2>
+                    <div class="info">
+                    </div>
+                </div>
+                <div class="sk-spinner sk-spinner-wave" style="opacity:0">
+                    <div class="sk-rect1"></div>
+                    <div class="sk-rect2"></div>
+                    <div class="sk-rect3"></div>
+                    <div class="sk-rect4"></div>
+                    <div class="sk-rect5"></div>
+                </div>
+                <div id="" class="bodyContent">
+                 12321
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        $("#mw-panel").find("h5").click(function () {
+
+            var t = $(this), b = t.next(".body"), p = t.parent();
+            if (b.is(":visible")) {
+                b.slideUp("fast");
+                p.removeClass("active");
+            } else {
+                //展开
+
+                //1.判断ul里是否有内容
+                var k = b.find("ul");
+                if (k.html() == "") {
+                    $(".sk-spinner").css("opacity", 1);
+                    $.post("/home/GetSubWiki", { id: $(p).attr("id") }, function (data)
+                    {
+                        $(".sk-spinner").css("opacity", 0);
+                        $.each(data,function(i,val)
+                        {
+                            if (i == 0)
+                            {
+                                $(".firstHeading").html(val.title);
+                                $(".bodyContent").css("display", "none");
+                                //列表
+                                var title = "<li class='.active' id=t_" + val.id + " onclick='showContent(this)'><a href='#'>&nbsp;&nbsp;&nbsp;" + val.title + "</a></li>";
+                                //内容
+                                var content = "<div id='c_" + val.id + "' class='bodyContent'>" + val.content + "</div>";
+                            } else
+                            {
+                                //列表
+                                var title = "<li id=t_" + val.id + " onclick='showContent(this)'><a href='#'>&nbsp;&nbsp;&nbsp;" + val.title + "</a></li>";
+                                //内容
+                                var content = "<div id=c_" + val.id + " style='display:none' class='bodyContent'>" + val.content + "</div>";
+                            }
+                            $(k).append(title);
+                            $("#content").append(content);
+                            prettyPrint()
+                        })
+                    });
+                }
+
+                b.find("li").find("em").addClass("none");
+                b.slideDown("fast", function () {
+                    b.find("li").find("em").removeClass("none");
+                });
+                p.addClass("active");
+            }
+            $(this).parent().siblings(".portal").removeClass("active").find(".body").slideUp("fast");
+        });
+    }
+    );
+    function showContent(t)
+    {
+        $(".bodyContent").slideUp();
+        $(".firstHeading").html($(t).find("a").text());
+        var id = $(t).attr("id").replace("t", "c");
+        $("#" + id).slideDown();
+    }
+</script>

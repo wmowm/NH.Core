@@ -30,6 +30,18 @@ namespace Web.Controllers
             return View();
         }
 
+        public IActionResult Home()
+        {
+            return View();
+        }
+        public IActionResult Api()
+        {
+            return View();
+        }
+        public IActionResult Test()
+        {
+            return View();
+        }
         [HttpGet]
         public ActionResult GetAuthCode()
         {

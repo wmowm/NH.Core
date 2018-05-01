@@ -6,6 +6,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>F:\GitProduct\NH.Core\Tibos.Web\bin\Release\PublishOutput</_PublishTargetUrl>
+    <_PublishTargetUrl>bin\Release\PublishOutput</_PublishTargetUrl>
   </PropertyGroup>
 </Project>

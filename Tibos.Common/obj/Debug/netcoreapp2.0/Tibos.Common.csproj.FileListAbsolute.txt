@@ -24,3 +24,5 @@ F:\GitProduct\NH.Core\Tibos.Common\obj\Debug\netcoreapp2.0\Tibos.Common.Assembly
 F:\GitProduct\NH.Core\Tibos.Common\obj\Debug\netcoreapp2.0\Tibos.Common.dll
 F:\GitProduct\NH.Core\Tibos.Common\obj\Debug\netcoreapp2.0\Tibos.Common.pdb
 F:\GitProduct\NH.Core\Tibos.Common\obj\Debug\netcoreapp2.0\Tibos.Common.csprojResolveAssemblyReference.cache
+F:\GitProduct\NH.Core\Tibos.Common\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Caching.Abstractions.dll
+F:\GitProduct\NH.Core\Tibos.Common\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Caching.Abstractions.xml

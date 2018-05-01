@@ -44,7 +44,8 @@ namespace Tibos.Api.Areas.User.Controllers
             {
                 Common.Json json = new Common.Json();
                 var model = _UsersService.Get(id);
-                return Json(model);
+                json.data = model;
+                return Json(json);
             });
         }
 
@@ -100,6 +101,17 @@ namespace Tibos.Api.Areas.User.Controllers
             });
         }
 
+        [Route("checktoken"), HttpPost]
+        public async Task<JsonResult> CheckToken(string token)
+        {
+            return await Task.Run<JsonResult>(() =>
+            {
+                Json json = new Json();
+                json = new Token(_Cache).CheckToken(token);
+                return Json(json);
+            });
+        }
+
         [Route("getlist"),HttpPost]
         public async Task<JsonResult> GetList([FromBody]Dictionary<string, dynamic> dic)
         {
@@ -139,7 +151,9 @@ namespace Tibos.Api.Areas.User.Controllers
                     //后面可以根据业务拓展查询条件
                 }
                 var list = _UsersService.GetList(st, order);
+                var list_count = _UsersService.GetCount(st);
                 json.data = list;
+                json.total = list_count;
                 return Json(json);
             });
         }
