@@ -1,9 +1,0 @@
-F:\GitProduct\NH.Core\Tibos.Common\bin\Release\netcoreapp2.0\Tibos.Common.deps.json
-F:\GitProduct\NH.Core\Tibos.Common\bin\Release\netcoreapp2.0\Tibos.Common.dll
-F:\GitProduct\NH.Core\Tibos.Common\bin\Release\netcoreapp2.0\Tibos.Common.pdb
-F:\GitProduct\NH.Core\Tibos.Common\obj\Release\netcoreapp2.0\Tibos.Common.csproj.CoreCompileInputs.cache
-F:\GitProduct\NH.Core\Tibos.Common\obj\Release\netcoreapp2.0\Tibos.Common.AssemblyInfoInputs.cache
-F:\GitProduct\NH.Core\Tibos.Common\obj\Release\netcoreapp2.0\Tibos.Common.AssemblyInfo.cs
-F:\GitProduct\NH.Core\Tibos.Common\obj\Release\netcoreapp2.0\Tibos.Common.dll
-F:\GitProduct\NH.Core\Tibos.Common\obj\Release\netcoreapp2.0\Tibos.Common.pdb
-F:\GitProduct\NH.Core\Tibos.Common\obj\Release\netcoreapp2.0\Tibos.Common.csprojResolveAssemblyReference.cache

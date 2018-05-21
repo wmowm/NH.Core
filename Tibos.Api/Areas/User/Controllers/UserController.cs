@@ -30,6 +30,7 @@ namespace Tibos.Api.Areas.User.Controllers
         //属性注入
         public UsersIService _UsersService { get; set; }
 
+
         //构造函数注入
         public UserController(IMemoryCache memoryCache)
         {

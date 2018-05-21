@@ -1,9 +1,0 @@
-H:\project\NH.Core\Common\bin\Debug\netcoreapp2.0\Common.deps.json
-H:\project\NH.Core\Common\bin\Debug\netcoreapp2.0\Common.dll
-H:\project\NH.Core\Common\bin\Debug\netcoreapp2.0\Common.pdb
-H:\project\NH.Core\Common\obj\Debug\netcoreapp2.0\Common.csprojResolveAssemblyReference.cache
-H:\project\NH.Core\Common\obj\Debug\netcoreapp2.0\Common.csproj.CoreCompileInputs.cache
-H:\project\NH.Core\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfoInputs.cache
-H:\project\NH.Core\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfo.cs
-H:\project\NH.Core\Common\obj\Debug\netcoreapp2.0\Common.dll
-H:\project\NH.Core\Common\obj\Debug\netcoreapp2.0\Common.pdb

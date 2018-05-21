@@ -101,8 +101,6 @@ namespace Tibos.Api
 
             //containerBuilder.RegisterControllers(Assembly.GetExecutingAssembly());  //注入所有Controller
             containerBuilder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly()).PropertiesAutowired();
-            //containerBuilder.RegisterType<HomeController>().PropertiesAutowired();
-            //containerBuilder.RegisterType<UserController>().PropertiesAutowired();
 
             containerBuilder.Populate(services);
             var container = containerBuilder.Build();

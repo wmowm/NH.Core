@@ -41,7 +41,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tibos.Api", "Tibos.Api\Tibo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tibos.Test", "Tibos.Test\Tibos.Test.csproj", "{CAF253DD-7314-4439-BFC2-BA271B96F3E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibos.ConfingModel", "Tibos.ConfingModel\Tibos.ConfingModel.csproj", "{29E708AB-A68B-419E-8640-026367C0BA7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tibos.ConfingModel", "Tibos.ConfingModel\Tibos.ConfingModel.csproj", "{29E708AB-A68B-419E-8640-026367C0BA7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

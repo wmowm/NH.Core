@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using Tibos.Domain;
 using Tibos.Common;
-using Tibos.Repository.Service;
 using Tibos.Repository.Contract;
 using Tibos.Service.Contract;
 namespace Tibos.Service
@@ -12,9 +11,11 @@ namespace Tibos.Service
 	public partial class UsersService:UsersIService
     {
 
-        private readonly IUsers dal = new D_Users();
-		public UsersService()
-		{}
+        private readonly IUsers dal;
+        public UsersService(IUsers dal)
+		{
+            this.dal = dal;
+        }
 		//这个里面是通用方法,实现增删改查排序(动软代码生成器自动生成)
 		#region  Method
         /// <summary>

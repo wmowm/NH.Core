@@ -25,13 +25,20 @@ namespace Tibos.Confing.autofac
             //builder.RegisterType<UsersService>().As<UsersIService>().PropertiesAutowired().EnableInterfaceInterceptors();
 
             //程序集注入
+            var IRepository = Assembly.Load("Tibos.Repository.Contract");
+            var Repository = Assembly.Load("Tibos.Repository.Service");
+
             var IServices = Assembly.Load("Tibos.Service.Contract");
             var Services = Assembly.Load("Tibos.Service");
+
+
 
             //根据名称约定（服务层的接口和实现均以Service结尾），实现服务接口和服务实现的依赖
             builder.RegisterAssemblyTypes(IServices, Services)
               .Where(t => t.Name.EndsWith("Service"))
               .AsImplementedInterfaces();
+
+            builder.RegisterAssemblyTypes(IRepository, Repository).AsImplementedInterfaces();
         }
     }
 }

@@ -14,6 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Tibos.Repository.Contract\Tibos.Repository.Contract.csproj" />
+    <ProjectReference Include="..\Tibos.Repository.Service\Tibos.Repository.Service.csproj" />
     <ProjectReference Include="..\Tibos.Service.Contract\Tibos.Service.Contract.csproj" />
     <ProjectReference Include="..\Tibos.Service\Tibos.Service.csproj" />
   </ItemGroup>
