@@ -13,14 +13,17 @@ using System.Text;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using System.Collections;
+using Tibos.Web.Models;
 
 namespace Web.Controllers
 {
     public class HomeController : Controller
     {
         private IHostingEnvironment hostingEnv;
-        public HomeController(IHostingEnvironment env)
+        private IViewRenderService _viewRenderService;
+        public HomeController(IHostingEnvironment env, IViewRenderService viewSendeRenderService)
         {
+            _viewRenderService = viewSendeRenderService;
             hostingEnv = env;
         }
         public IActionResult Index()
@@ -46,9 +49,39 @@ namespace Web.Controllers
         {
             return View();
         }
+
+        public IActionResult Api2()
+        {
+            return View();
+        }
+
         public IActionResult Test()
         {
             return View();
+        }
+
+        List<Wiki> list_wiki = new List<Wiki>();
+
+        public IActionResult Wiki()
+        {
+            list_wiki = new List<Wiki>();
+            list_wiki.Add(new Controllers.Wiki() { title = "Web区域", content = "测试,测试,测试", ClientType = "IOS", id = 1 });
+            list_wiki.Add(new Controllers.Wiki() { title = "IOS区域", content = "测试,测试,测试", ClientType = "Android", id = 2 });
+            list_wiki.Add(new Controllers.Wiki() { title = "Android区域", content = "测试,测试,测试", ClientType = "Web", id = 3 });
+            ViewData["list_wiki"] = list_wiki;
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult GetSubWiki(int id)
+        {
+            list_wiki = new List<Wiki>();
+            var res = "<pre class=\"prettyprint lang-cs\">public JsonResult GetWikiList(int limit = 10, int offset = 1)</ pre ><br /> 测试,测试";
+
+            list_wiki.Add(new Controllers.Wiki() { title = "怎么调用API?", content = res, ClientType = "IOS", id = 1 });
+            list_wiki.Add(new Controllers.Wiki() { title = "注册", content = "测试,测试,测试", ClientType = "Android", id = 2 });
+            list_wiki.Add(new Controllers.Wiki() { title = "登录", content = "测试,测试,测试", ClientType = "Web", id = 3 });
+            return Json(list_wiki);
         }
 
         public IActionResult UpImg()
@@ -96,6 +129,14 @@ namespace Web.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+
+
+        public async Task<IActionResult> KKK()
+        {
+            var result = await _viewRenderService.RenderToStringAsync("Home/index", "");
+            await WriteViewAsync(result);
+            return Content(result);
+        }
 
 
 
@@ -166,5 +207,51 @@ namespace Web.Controllers
             return infoList;
         }
 
+
+
+
+
+        /// <summary>
+        /// 将视图写入文件
+        /// </summary>
+        /// <param name="info">路由信息</param>
+        /// <returns></returns>
+        public async Task WriteViewAsync(string html)
+        {
+            //创建文件流  
+            FileStream myfs = new FileStream(@"E:\GitProject\nh.core\Tibos.Web\temp\aaa.html", FileMode.Create);
+            //打开方式  
+            //1:Create  用指定的名称创建一个新文件,如果文件已经存在则改写旧文件  
+            //2:CreateNew 创建一个文件,如果文件存在会发生异常,提示文件已经存在  
+            //3:Open 打开一个文件 指定的文件必须存在,否则会发生异常  
+            //4:OpenOrCreate 打开一个文件,如果文件不存在则用指定的名称新建一个文件并打开它.  
+            //5:Append 打开现有文件,并在文件尾部追加内容.  
+
+            //创建写入器  
+            StreamWriter mySw = new StreamWriter(myfs);//将文件流给写入器  
+            //将录入的内容写入文件  
+            mySw.Write(html);
+            //关闭写入器  
+            mySw.Close();
+            //关闭文件流  
+            myfs.Close();
+        }
+
+
+
     }
+    public class Wiki
+    {
+
+        public int id { get; set; }
+        public string title { get; set; }
+
+        public string ClientType { get; set; }
+
+        public string content { get; set; }
+    }
+
+
+
+
 }

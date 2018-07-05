@@ -165,6 +165,14 @@ namespace Tibos.Repository.Service
                     crit.SetMaxResults(paging[1]);
                     continue;
                 }
+
+                if (item.searchType.ToString() == EnumBase.SearchType.Group.ToString())
+                {
+                    crit.SetProjection(Projections.ProjectionList()
+                        .Add(Projections.GroupProperty(item.value.ToString()))
+                        .Add(Projections.RowCount()));
+                }
+
             }
             return crit;
         }

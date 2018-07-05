@@ -43,6 +43,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tibos.Test", "Tibos.Test\Ti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tibos.ConfingModel", "Tibos.ConfingModel\Tibos.ConfingModel.csproj", "{29E708AB-A68B-419E-8640-026367C0BA7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTest", "WebTest\WebTest.csproj", "{DBA6F375-C540-4589-A899-D0A361831819}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{29E708AB-A68B-419E-8640-026367C0BA7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29E708AB-A68B-419E-8640-026367C0BA7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29E708AB-A68B-419E-8640-026367C0BA7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBA6F375-C540-4589-A899-D0A361831819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBA6F375-C540-4589-A899-D0A361831819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBA6F375-C540-4589-A899-D0A361831819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBA6F375-C540-4589-A899-D0A361831819}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -109,6 +115,7 @@ Global
 		{92BA69B1-0C4B-47A3-92CA-0C265AB19520} = {D4C12E8F-5E0D-455E-81E8-71546D866440}
 		{CAF253DD-7314-4439-BFC2-BA271B96F3E2} = {416D0D1A-4023-4566-BACC-0653F89CF540}
 		{29E708AB-A68B-419E-8640-026367C0BA7C} = {5F909911-FC24-47CC-A9F5-BEC77155F34F}
+		{DBA6F375-C540-4589-A899-D0A361831819} = {416D0D1A-4023-4566-BACC-0653F89CF540}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A94B1D2-C9FB-4144-B80F-BED3F002B315}

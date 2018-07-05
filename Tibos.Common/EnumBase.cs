@@ -146,6 +146,10 @@ namespace Tibos.Common
             /// 分页{pageindex,pagesize}
             /// </summary>
             Paging = 12,
+            /// <summary>
+            /// 分组
+            /// </summary>
+            Group = 13
         }
 
         public enum ExamType

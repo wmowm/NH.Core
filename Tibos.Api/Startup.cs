@@ -29,6 +29,9 @@ using System.Text;
 using NLog.Extensions.Logging;
 using NLog.Web;
 using System.Reflection;
+using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.Extensions.PlatformAbstractions;
+using System.IO;
 
 namespace Tibos.Api
 {
@@ -94,6 +97,26 @@ namespace Tibos.Api
             //权限验证
             services.AddAuthorization();
 
+            //swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v2.5", new Info
+                {
+                    Version = "v2.5",
+                    Title = "Tibos接口文档",
+                    Description = "RESTful API for Tibos",
+                    TermsOfService = "None",
+                    Contact = new Contact { Name = "Tibos", Email = "505613913@qq.com", Url = "" }
+                });
+
+                //Set the comments path for the swagger json and ui.
+                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+                var xmlPath = Path.Combine(basePath, "Tibos.Api.xml");
+                c.IncludeXmlComments(xmlPath);
+
+                //  c.OperationFilter<HttpHeaderOperation>(); // 添加httpHeader参数
+            });
+
             var containerBuilder = new ContainerBuilder();
             //模块化注入
             containerBuilder.RegisterModule<DefaultModule>();
@@ -128,6 +151,16 @@ namespace Tibos.Api
             app.UseAuthentication();
             loggerFactory.AddNLog();//添加NLog
             env.ConfigureNLog(AppContext.BaseDirectory + "config/nlog.config");//读取Nlog配置文件
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS etc.), specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v2.5/swagger.json", "Tibos API V2.5");
+                c.ShowExtensions();
+            });
         }
     }
 }
