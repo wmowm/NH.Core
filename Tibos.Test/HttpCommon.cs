@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Tibos.Test
 {
@@ -47,7 +50,6 @@ namespace Tibos.Test
         public static string HttpPost(string url, string postStr = "", Encoding encode = null)
         {
             string result;
-
             try
             {
                 var webClient = new WebClient { Encoding = Encoding.UTF8 };
@@ -59,6 +61,7 @@ namespace Tibos.Test
 
                 webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
                 webClient.Headers.Add("ContentLength", sendData.Length.ToString(CultureInfo.InvariantCulture));
+                webClient.Headers.Add("X-Compress-Codes", "0");
 
                 var readData = webClient.UploadData(url, "POST", sendData);
 
@@ -73,5 +76,28 @@ namespace Tibos.Test
             return result;
         }
 
+
+
+        /// <summary>
+        /// 异步请求get(UTF-8)
+        /// </summary>
+        /// <param name="url">链接地址</param>       
+        /// <param name="formData">写在header中的内容</param>
+        /// <returns></returns>
+        public static async Task<string> HttpGetAsync(string url, List<KeyValuePair<string, string>> formData = null)
+        {
+            HttpClient httpClient = new HttpClient();
+           
+            var request = new HttpRequestMessage()
+            {
+                RequestUri = new Uri(url),
+                Method = HttpMethod.Get,
+            };
+            var resp = await httpClient.SendAsync(request);
+            resp.EnsureSuccessStatusCode();
+            string token = await resp.Content.ReadAsStringAsync();
+
+            return token;
+        }
     }
 }

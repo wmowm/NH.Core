@@ -78,6 +78,8 @@ namespace Tibos.Common
         {
             if (ControllerName.ToLower() == "user" && ActionName.ToLower() == "gettoken") return true;
             if (ControllerName.ToLower() == "user" && ActionName.ToLower() == "checktoken") return true;
+
+            if (ControllerName.ToLower() == "home" && ActionName.ToLower() == "get") return true;
             return false;
         }
     }

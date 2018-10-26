@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
@@ -9,6 +10,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using Tibos.Api.Annotation;
 using Tibos.Common;
 using Tibos.Service.Contract;
 
@@ -50,6 +52,17 @@ namespace Tibos.Api.Filters
             }
             logger.LogInformation(MonLog.GetLoginfo());
             #endregion
+
+            #region 根据注解允许匿名访问
+            Type type = this.GetType();
+            var actionDescriptor = context.ActionDescriptor as ControllerActionDescriptor;
+            var controllerAttributes = type.GetCustomAttributes(typeof(AlwaysAccessibleAttribute),true);
+            if (controllerAttributes != null && controllerAttributes.Length > 0)
+            {
+                return;
+            }
+            #endregion
+
             #region 权限验证
             //1.忽略权限验证的部分(如果要忽略的部分过多,可以提取成方法)
             if (_Token.PassToken(MonLog.ControllerName, MonLog.ActionName)) return;

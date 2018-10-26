@@ -61,7 +61,7 @@ GUID: @ViewData["GUID"]
     toekn:<span id="token"></span>
 </div>
 
-<a href=""  target="_top"></a>
+<a href="" target="_top"></a>
 
 <div id="vt" style="margin-top:50px;">
     <table class="table">
@@ -86,6 +86,7 @@ GUID: @ViewData["GUID"]
         </tbody>
     </table>
 </div>
+
 <script src="~/js/jquery.min.js"></script>
 <script src="~/js/vue.min.js"></script>
 <script>
@@ -94,9 +95,9 @@ GUID: @ViewData["GUID"]
     var vm = new Vue({
         el: '#vt',
         data:
-        {
-            list: []
-        }
+            {
+                list: []
+            }
     })
     var path = "http://localhost:7076";
 
@@ -117,16 +118,17 @@ GUID: @ViewData["GUID"]
 
     function getlist() {
         var param = {
-            //"user_name": "admin",
-            "order": [{ "searchType": 1, "value": "id" }],
-            "paging": [1, 10]
+            "param": [{ "key": "id", "values": "112" }, { "key": "name", "values": 998 }],
+            "sort": [{ "key": "id", "searchType": 1 }, { "key": "name", "searchType": 0 }],
+            "paging": { "pageIndex": 0, "pageSize": 10 },
         };
         $.ajax({
             type: "post",
             url: path + "/api/user/getlist",
-            data: JSON.stringify(param),
+            //data: JSON.stringify(param),
+            data:param,
             async: false,
-            contentType: 'application/json; charset=urf-8',
+            //contentType: 'application/json; charset=urf-8',
             beforeSend: function (xhr) {
                 xhr.setRequestHeader("token", $("#token").html());
             },

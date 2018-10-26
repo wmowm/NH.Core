@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Newtonsoft.Json;
+using Tibos.Api.Annotation;
 using Tibos.Common;
 using Tibos.ConfingModel;
 using Tibos.ConfingModel.model;
@@ -18,6 +19,7 @@ using Tibos.Service.Contract;
 
 namespace Tibos.Api.Areas.User.Controllers
 {
+    [AlwaysAccessibleAttribute]
     [Produces("application/json")]
     [Route("api/User/")]
     [EnableCors("any")]
@@ -114,7 +116,8 @@ namespace Tibos.Api.Areas.User.Controllers
         }
 
         [Route("getlist"),HttpPost]
-        public async Task<JsonResult> GetList([FromBody]Dictionary<string, dynamic> dic)
+        [AlwaysAccessibleAttribute]
+        public async Task<JsonResult> GetList(Paging paging, Sort[] sort, params Params[] param)
         {
             return await Task.Run<JsonResult>(() =>
             {
@@ -123,35 +126,14 @@ namespace Tibos.Api.Areas.User.Controllers
                 List<SearchTemplate> st = new List<SearchTemplate>();
                 //自定义排序模板
                 List<SortOrder> order = new List<SortOrder>();
-                //对参数的操作
-                foreach (var item in dic.Keys)
+                foreach (var item in param)
                 {
-                    //根据用户名模糊查询
-                    if (item == "user_name")
+                    if (item.key == "id")
                     {
-                        st.Add(new SearchTemplate() { key = "user_name", value = dic[item], searchType = EnumBase.SearchType.Like });
+                        st.Add(new SearchTemplate() { key = item.key, value = item.values, searchType = EnumBase.SearchType.Eq });
                     }
-                    //根据用户名模糊查询
-                    if (item == "mobile")
-                    {
-                        st.Add(new SearchTemplate() { key = "mobile", value = dic[item], searchType = EnumBase.SearchType.Like });
-                    }
-                    //排序
-                    if (item == "order")
-                    {
-                        var str = JsonConvert.SerializeObject(dic[item]);
-                        order = JsonConvert.DeserializeObject<List<SortOrder>>(str);
-                    }
-                    //分页
-                    if (item == "paging")
-                    {
-                        var str = JsonConvert.SerializeObject(dic[item]);
-                        int [] paging = JsonConvert.DeserializeObject<int[]>(str);
-                        st.Add(new SearchTemplate() { key = "", value = paging, searchType = Common.EnumBase.SearchType.Paging });
-                    }
-                    //后面可以根据业务拓展查询条件
                 }
-                var list = _UsersService.GetList(st, order);
+                var list = _UsersService.GetList(st, null);
                 var list_count = _UsersService.GetCount(st);
                 json.data = list;
                 json.total = list_count;

@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Tibos.Common
 {
+
     [Serializable]
     public class SearchTemplate
     {
@@ -17,7 +18,6 @@ namespace Tibos.Common
         /// 要查询的属性的值(对应Model里的属性得值)
         /// </summary>
         public object value { get; set; }
-
         /// <summary>
         /// 查询类型(>,=,In.....)
         /// </summary>

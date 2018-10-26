@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="addImg">
+
+</div>
+
+<script src="~/js/test.js"></script>
+<script>
+    var gaid = "123456789";//需要提供的gaid
+    getImgEle(gaid, function (data) {
+        console.log(data)
+        document.getElementById("addImg").insertAdjacentHTML("afterend", data)
+    });
+</script>

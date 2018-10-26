@@ -32,6 +32,7 @@ using System.Reflection;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.Extensions.PlatformAbstractions;
 using System.IO;
+using AutoMapper;
 
 namespace Tibos.Api
 {
@@ -56,6 +57,9 @@ namespace Tibos.Api
         {
             //替换控制器所有者
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
+
+            //添加AutoMapper
+            services.AddAutoMapper();
 
             services.AddMvc(options=>
             {

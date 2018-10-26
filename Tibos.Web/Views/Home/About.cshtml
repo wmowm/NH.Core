@@ -1,143 +1,54 @@
-﻿<h2>
-    请求地址:/api/ExternalAPI/SetSafePwd
-</h2>
-<h2>
-    <hr />
-</h2>
-<h2>
-    请求参数说明
-</h2>
-<h2>
-    <hr />
-</h2>
-<p>
-    <br />
-</p>
-<p></p>
-<table>
-    <tbody>
-        <tr>
-            <th>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;参数名
-            </th>
-            <th>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;必选
-            </th>
-            <th>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;类型
-            </th>
-            <th>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;说明
-            </th>
-        </tr>
-        <tr>
-            <td>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pwd
-            </td>
-            <td>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;是
-            </td>
-            <td>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;string
-            </td>
-            <td>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;PIN值
-            </td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Token(放header里面)
-            </td>
-            <td>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;是
-            </td>
-            <td>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;string
-            </td>
-            <td>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;用户票据
-            </td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ClientType
-            </td>
-            <td>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;是
-            </td>
-            <td>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;string
-            </td>
-            <td>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;客户端类型(API为3)
-            </td>
-        </tr>
-    </tbody>
-</table>
-<p>
-    <span> </span>
-</p>
-<p></p>
-<hr />
-<h2>
-    请求示例
-    <hr />
-</h2>
-<pre class="prettyprint lang-js">   
- $(&quot;#btn4&quot;).click(function () {
-            var param = {
-                &quot;UserID&quot;: $(&quot;#get_UserID&quot;).val(),
-            };
-            $.ajax({
-                type: &quot;post&quot;,
-                url: path + &quot;/api/ExternalAPI/GetAssets&quot;,
-                data: param,
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader(&quot;Token&quot;, $(&quot;#get_token&quot;).html());
-                    xhr.setRequestHeader(&quot;ClientType&quot;, &quot;3&quot;);
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- 国内使用 -->
+    <script type="text/javascript" charset="utf-8" src="//g.alicdn.com/sd/ncpc/nc.js?t=2015052012"></script>
+    <!-- 若您的主要用户来源于海外，请替换使用下面的js资源 -->
+    <!-- <script type="text/javascript" charset="utf-8" src="//aeis.alicdn.com/sd/ncpc/nc.js?t=2015052012"></script> -->
+</head>
+<body>
+    <div id="your-dom-id" class="nc-container"></div> <!--No-Captcha渲染的位置，其中 class 中必须包含 nc-container-->
+
+    <script type="text/javascript">
+        var nc_token = ["FFFF0N00000000006365", (new Date()).getTime(), Math.random()].join(':');
+        var NC_Opt =
+            {
+                renderTo: "#your-dom-id",
+                appkey: "FFFF0N00000000006365",
+                scene: "nc_login",
+                token: nc_token,
+                customWidth: 300,
+                trans: { "key1": "code0" },
+                elementID: ["usernameID"],
+                is_Opt: 0,
+                language: "cn",
+                isEnabled: true,
+                timeout: 3000,
+                times: 5,
+                apimap: {
+                    // 'analyze': '//a.com/nocaptcha/analyze.jsonp',
+                    // 'get_captcha': '//b.com/get_captcha/ver3',
+                    // 'get_captcha': '//pin3.aliyun.com/get_captcha/ver3'
+                    // 'get_img': '//c.com/get_img',
+                    // 'checkcode': '//d.com/captcha/checkcode.jsonp',
+                    // 'umid_Url': '//e.com/security/umscript/3.2.1/um.js',
+                    // 'uab_Url': '//aeu.alicdn.com/js/uac/909.js',
+                    // 'umid_serUrl': 'https://g.com/service/um.json'
                 },
-                success: function (data, status) {
-                    $(&quot;#getStatus&quot;).html(data.StatusCode);
-                    $(&quot;#getMsg&quot;).html(data.Msg);
-                    $(&quot;#getData&quot;).html(JSON.stringify(data.Data));
+                callback: function (data) {
+                    window.console && console.log(nc_token)
+                    window.console && console.log(data.csessionid)
+                    window.console && console.log(data.sig)
                 }
-            });
-        })</pre>
-<hr />
-<h2>
-    &nbsp;返回示例
-</h2>
-<pre class="prettyprint lang-js">{
-    &quot;Data&quot;: {
-        &quot;UserID&quot;: &quot;CFDftMtF5E-BJpQQCglhHA&quot;,
-        &quot;TotalRMB&quot;: 0,
-        &quot;CNYExchangeRate&quot;: 0,
-        &quot;HKDExchangeRate&quot;: 0,
-        &quot;NewestBTCPrice&quot;: 0,
-        &quot;TotalUSD&quot;: 0,
-        &quot;TotalHKD&quot;: 0,
-        &quot;TotalBTC&quot;: 0,
-        &quot;Assets&quot;: null
-    },
-    &quot;Status&quot;: true,
-    &quot;Msg&quot;: null,
-    &quot;Url&quot;: null,
-    &quot;StatusCode&quot;: &quot;200&quot;,
-    &quot;Extra&quot;: null
-}</pre>
+            }
+        var nc = new noCaptcha(NC_Opt)
+        nc.upLang('cn', {
+            _startTEXT: "请按住滑块，拖动到最右边",
+            _yesTEXT: "验证通过",
+            _error300: "哎呀，出错了，点击<a href=\"javascript:__nc.reset()\">刷新</a>再来一次",
+            _errorNetwork: "网络不给力，请<a href=\"javascript:__nc.reset()\">点击刷新</a>",
+        })
+    </script>
+</body>
+</html>

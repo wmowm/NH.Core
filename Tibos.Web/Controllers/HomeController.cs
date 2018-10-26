@@ -60,6 +60,11 @@ namespace Web.Controllers
             return View();
         }
 
+        public IActionResult Html()
+        {
+            return View();
+        }
+
         List<Wiki> list_wiki = new List<Wiki>();
 
         public IActionResult Wiki()

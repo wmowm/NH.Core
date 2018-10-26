@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Tibos.Api.Annotation;
 using Tibos.Confing.autofac;
 using Tibos.ConfingModel;
 using Tibos.ConfingModel.model;
@@ -15,19 +17,21 @@ namespace Tibos.Api.Controllers
     [Route("api/[controller]")]
     public class HomeController : Controller
     {
-
+        private readonly IMapper _mapper;
+        public HomeController(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
         public UsersIService _UsersService { get; set; }
+        public IMapper _IMapper { get; set; }
 
-        
 
         // GET api/values
         [HttpGet]
+        [AlwaysAccessibleAttribute]
         public IEnumerable<string> Get()
         {
             var config = JsonConfigurationHelper.GetAppSettings<ManageConfig>("ManageConfig.json", "ManageConfig");
-            //Users m_user = new Users();
-            //m_user.user_name = "这是测试哦";
-            //_UsersService.Save(m_user);
             var res = _UsersService.Get(1);
             return new string[] { res.id.ToString(), res.user_name };
         }
@@ -36,19 +40,20 @@ namespace Tibos.Api.Controllers
         [HttpGet("{id}")]
         public async Task<string> Get(int id)
         {
+            Users user = new Users()
+            {
+                id = 1,
+                email = "505613913@qq.com",
+                mobile = "666",
+                nick_name = "tibos"
+            };
+            var dto = _IMapper.Map<UsersDto>(user);
             return await Task.Run<string>(()=> {return Test(); });
         }
 
         private string Test()
         {
             return "666";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-
         }
 
 

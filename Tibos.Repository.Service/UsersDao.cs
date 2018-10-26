@@ -13,7 +13,7 @@ namespace Tibos.Repository.Service
 	/// <summary>
 	/// 接口层D_Users
 	/// </summary>
-	public class D_Users:IUsers
+	public class UsersDao: IUsers
 	{
 	    private ISessionFactory sessionFactory = ManagerPage.SessionFactory;
 		#region  成员方法

@@ -11,10 +11,10 @@ namespace Tibos.Service
 	public partial class UsersService:UsersIService
     {
 
-        private readonly IUsers dal;
-        public UsersService(IUsers dal)
+        private readonly IUsers dao;
+        public UsersService(IUsers dao)
 		{
-            this.dal = dal;
+            this.dao = dao;
         }
 		//这个里面是通用方法,实现增删改查排序(动软代码生成器自动生成)
 		#region  Method
@@ -25,7 +25,7 @@ namespace Tibos.Service
         /// <returns></returns>
         public Users Get(int id) 
         {
-            return dal.Get(id);
+            return dao.Get(id);
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Tibos.Service
         public IList<Users> GetList(List<SearchTemplate> st, List<SortOrder> order) 
         {
 
-            return dal.GetList(st,order);
+            return dao.GetList(st,order);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Tibos.Service
         /// <returns></returns>
         public int GetCount(List<SearchTemplate> st)
         {
-            return dal.GetCount(st);
+            return dao.GetCount(st);
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Tibos.Service
         /// <returns></returns>
         public int Save(Users m_user) 
         {
-            return Convert.ToInt32(dal.Save(m_user));
+            return Convert.ToInt32(dao.Save(m_user));
         }
 
         /// <summary>
@@ -66,17 +66,17 @@ namespace Tibos.Service
         /// <returns></returns>
         public void Update(Users m_user) 
         {
-            dal.Update(m_user);
+            dao.Update(m_user);
         }
 
         public void Delete(int id)
         {
-            dal.Delete(id);
+            dao.Delete(id);
         }
 
         public bool Exists(int id) 
         {
-            return dal.Exists(id);
+            return dao.Exists(id);
         }
 		#endregion
 
@@ -96,7 +96,10 @@ namespace Tibos.Service
                 new SearchTemplate(){key="password",value=pwd,searchType=EnumBase.SearchType.Eq}
             };
             IList<Users> list = GetList(st, null);
-            if (list.Count > 0) return list[0];
+            if (list.Count > 0)
+            {
+                return list[0];
+            }
             return null;
         }
         #endregion
