@@ -23,6 +23,8 @@ namespace Tibos.Common
 
         public string msg { get; set; }//消息
 
+
+        public int code { get; set; } //状态码
         public string returnUrl { get; set; }//跳转的页面
 
         public object data { get; set; }//数据

@@ -37,7 +37,7 @@ namespace Tibos.Test1.Filters
             #region 根据注解允许匿名访问
 
             var actionDescriptor = context.ActionDescriptor as ControllerActionDescriptor;
-            var controllerAttributes = actionDescriptor.GetType().GetCustomAttributes(typeof(AlwaysAccessibleAttribute), false);
+            var controllerAttributes = actionDescriptor.MethodInfo.GetCustomAttributes(typeof(AlwaysAccessibleAttribute), false);
             if (controllerAttributes != null && controllerAttributes.Length > 0)
             {
                 return;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
@@ -11,15 +12,25 @@ namespace Tibos.Test
 {
     class Program
     {
+
+
+
         static void Main(string[] args)
         {
-            decimal d = decimal.Round(decimal.Parse("0.550580"), 4);
-            decimal k = decimal.Parse(d.ToString("#0.######"));
-            Growing.Start();
+
+
+            Console.WriteLine("1231");
+
+            Expression first = Expression.Constant(2);
+            Expression second = Expression.Constant(2);
+
+            Expression add = Expression.Add(first,second);
 
 
 
-
+            //decimal d = decimal.Round(decimal.Parse("0.550580"), 4);
+            //decimal k = decimal.Parse(d.ToString("#0.######"));
+            //Growing.Start();
             //string sign = "DXoBFvxuFJaHgEqLIYjTnPALQ36O96tYd7Br/2ucb8bq+sjQUUhnps1udLy5mzMsm00SQqRjVngCC2/yVm1C/Q/B/1aYTRRwH1XSGfiVaBqTz/+MSBwQrzw1Y4gTXmkZoVXQqhrBGuKEQWd+AJsPUngXETE1TzEePLUOnIU2KnsKANIXvrax/auJbHKUpdcW1Dg/7uM2DDV85qc9UposKxjWfYozHVBWPSflslrn6tXXDuVUrcD0gaIrAznu8R8sMoo3DtsebIW1ooIrUXRDdZ/SijRhsGR3/Yx137EWPGVrUwhif+SQkkZyT15xcwkilpOpvhrtI/crJGEPURVe5A==";
             //var res = HttpCommon.HttpPost("http://preapi.bi-xing.com:8303/api/ExternalAPI/RegisterUser", "json=M0gZC6V7d9T1WCQcBZaiBxH11g7ngogtG8u5tE7HHDcTVrGYajN7KYUpRHTeHv//+3LHuMjrdcQHbab0t86scH1gpJPx/nP2RBz/a+5CzCm516rlF2C+9Yj1Mj2F8Zgya4jXTOjV5bmYHekjXR8DPDCHNJwAfO2qPjlSPTutXYKvTO+ufXUK9WRhHPGkfYilXC31JIERFI57kNVDMIaXcn/M72ID4pSL2SxdCviXCixP4TL4G7xNpYlEI8Wg3Gg97rAT0ZGvWUJYZX+gAMVrSD4MU+xz/JZSFvQ2XBUn40qZRDBwZJF6O1XD4OlmCnGrFvzqnTK+j6BqZvIHSAhD6A==", sign: sign);
             //var aa = "btc/vhkd";

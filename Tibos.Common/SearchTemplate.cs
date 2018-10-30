@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace Tibos.Common
@@ -37,5 +38,63 @@ namespace Tibos.Common
         /// 要排序的属性(对应Model里的属性)
         /// </summary>
         public string value { get; set; }
+    }
+    /// <summary>
+    /// 分页
+    /// </summary>
+    [Serializable]
+    public class Pagination
+    {
+        public int pageSize { get; set; }
+
+        public int pageIndex { get; set; }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    [Serializable]
+    public class SortOrder<T>
+    {
+        /// <summary>
+        /// 要排序的属性(对应Model里的属性)
+        /// </summary>
+        public Expression<Func<T, object>> value { get; set; }
+
+        /// <summary>
+        /// 排序方式(Asc,Desc)
+        /// </summary>
+        public Common.EnumBase.OrderType searchType { get; set; }
     }
 }

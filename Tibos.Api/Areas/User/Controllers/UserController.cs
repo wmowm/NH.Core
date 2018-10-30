@@ -39,7 +39,7 @@ namespace Tibos.Api.Areas.User.Controllers
             _Cache = memoryCache;
         }
 
-
+        [AlwaysAccessibleAttribute]
         [HttpGet]
         public async Task<JsonResult> Get(int id)
         {
@@ -77,7 +77,7 @@ namespace Tibos.Api.Areas.User.Controllers
                 List<SearchTemplate> st = new List<SearchTemplate>();
                 st.Add(new SearchTemplate() { key = "user_name", value = user_name, searchType = EnumBase.SearchType.Eq });
                 st.Add(new SearchTemplate() { key = "password", value = password, searchType = EnumBase.SearchType.Eq });
-                var list = _UsersService.GetList(st, null);
+                var list = _UsersService.GetList(m=>m.user_name == user_name && m.password == password,null,null);
                 if (list.Count > 0)
                 {
                     //获取token
@@ -115,26 +115,15 @@ namespace Tibos.Api.Areas.User.Controllers
             });
         }
 
-        [Route("getlist"),HttpPost]
-        [AlwaysAccessibleAttribute]
-        public async Task<JsonResult> GetList(Paging paging, Sort[] sort, params Params[] param)
+        [AlwaysAccessible]
+        [Route("getlist"), HttpPost]
+        public async Task<JsonResult> GetList(UsersRequest request)
         {
             return await Task.Run<JsonResult>(() =>
             {
                 Json json = new Common.Json();
-                //自定义参数模板
-                List<SearchTemplate> st = new List<SearchTemplate>();
-                //自定义排序模板
-                List<SortOrder> order = new List<SortOrder>();
-                foreach (var item in param)
-                {
-                    if (item.key == "id")
-                    {
-                        st.Add(new SearchTemplate() { key = item.key, value = item.values, searchType = EnumBase.SearchType.Eq });
-                    }
-                }
-                var list = _UsersService.GetList(st, null);
-                var list_count = _UsersService.GetCount(st);
+                var list = _UsersService.GetList(request);
+                var list_count = _UsersService.GetCount(request);
                 json.data = list;
                 json.total = list_count;
                 return Json(json);

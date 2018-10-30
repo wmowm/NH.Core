@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using Tibos.Common;
 using Tibos.Domain;
 
@@ -14,9 +15,11 @@ namespace Tibos.Service.Contract
 
         Users Get(int id);
 
-        IList<Users> GetList(List<SearchTemplate> st, List<SortOrder> order);
+        IList<Users> GetList(UsersRequest request);
 
-        int GetCount(List<SearchTemplate> st);
+        IList<Users> GetList(Expression<Func<Users, bool>> expression, List<SortOrder<Users>> expressionOrder, Pagination pagination);
+
+        int GetCount(UsersRequest request);
 
         int Save(Users m_user);
 

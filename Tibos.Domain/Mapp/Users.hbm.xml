@@ -31,5 +31,6 @@
 		<property name="LoginTime" column="LoginTime" type="DateTime"  />
 		<property name="YB" column="YB" type="int"  />
     <property name="is_del" column="is_del" type="int"  />
+    <many-to-one name="Groups" column="GId"  cascade="none" lazy="false" />
 	</class>
 </hibernate-mapping>

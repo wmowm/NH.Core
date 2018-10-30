@@ -47,12 +47,18 @@ namespace Tibos.Repository.Contract
         /// <summary>
         /// 条件查询
         /// </summary>
-        IList<Users> GetList(List<SearchTemplate> st, List<SortOrder> order);
+        IList<Users> GetList(RequestParams request);
+
+        /// <summary>
+        /// 查询条件
+        /// </summary>
+        IList<Users> GetList(Expression<Func<Users, bool>> expression, List<SortOrder<Users>> expressionOrder, Pagination pagination);
+        
 
         /// <summary>
         /// 获取总条数
         /// </summary>
-        int GetCount(List<SearchTemplate> st);
+        int GetCount(RequestParams request);
         
 
 		#endregion  成员方法

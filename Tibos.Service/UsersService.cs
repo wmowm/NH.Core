@@ -6,6 +6,8 @@ using Tibos.Domain;
 using Tibos.Common;
 using Tibos.Repository.Contract;
 using Tibos.Service.Contract;
+using System.Linq.Expressions;
+
 namespace Tibos.Service
 {
 	public partial class UsersService:UsersIService
@@ -27,15 +29,51 @@ namespace Tibos.Service
         {
             return dao.Get(id);
         }
+        public RequestParams GetWhere(UsersRequest request)
+        {
+            RequestParams rp = new RequestParams();
+            //追加查询参数
+            if (!string.IsNullOrEmpty(request.email))
+            {
+                rp.Params.Add(new Params() { key = "email", value = request.email, searchType = EnumBase.SearchType.Eq });
+            }
+            //添加排序(多个排序条件,可以额外添加)
+            if (!string.IsNullOrEmpty(request.sortKey))
+            {
+                rp.Sort.Add(new Sort() { key = request.sortKey, searchType = (EnumBase.OrderType)request.sortType });
+            }
+            else
+            {
+                rp.Sort = null;
+            }
+
+            //添加分页
+            if (request.pageIndex > 0)
+            {
+                rp.Paging.pageIndex = request.pageIndex;
+                rp.Paging.pageSize = request.pageSize;
+            }
+            else
+            {
+                rp.Paging = null;
+            }
+            return rp;
+        }
+
 
         /// <summary>
         /// 获取用户列表
         /// </summary>
         /// <returns></returns>
-        public IList<Users> GetList(List<SearchTemplate> st, List<SortOrder> order) 
+        public IList<Users> GetList(UsersRequest request) 
         {
+            RequestParams rp = GetWhere(request);
+            return dao.GetList(rp);
+        }
 
-            return dao.GetList(st,order);
+        public IList<Users> GetList(Expression<Func<Users, bool>> expression, List<SortOrder<Users>> expressionOrder, Pagination pagination)
+        {
+            return dao.GetList(expression, expressionOrder, pagination);
         }
 
         /// <summary>
@@ -44,9 +82,10 @@ namespace Tibos.Service
         /// <param name="user_name"></param>
         /// <param name="mobile"></param>
         /// <returns></returns>
-        public int GetCount(List<SearchTemplate> st)
+        public int GetCount(UsersRequest request)
         {
-            return dao.GetCount(st);
+            RequestParams rp = GetWhere(request);
+            return dao.GetCount(rp);
         }
 
         /// <summary>
@@ -95,7 +134,7 @@ namespace Tibos.Service
                 new SearchTemplate(){key="user_name",value=un,searchType=EnumBase.SearchType.Eq},
                 new SearchTemplate(){key="password",value=pwd,searchType=EnumBase.SearchType.Eq}
             };
-            IList<Users> list = GetList(st, null);
+            IList<Users> list = GetList(m => m.user_name == un && m.password == pwd, null, null);
             if (list.Count > 0)
             {
                 return list[0];

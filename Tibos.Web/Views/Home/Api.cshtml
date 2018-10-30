@@ -118,9 +118,9 @@ GUID: @ViewData["GUID"]
 
     function getlist() {
         var param = {
-            "param": [{ "key": "id", "values": "112" }, { "key": "name", "values": 998 }],
+            "params": [{ "key": "id", "value": "112" }, { "key": "name", "value": 998 }],
             "sort": [{ "key": "id", "searchType": 1 }, { "key": "name", "searchType": 0 }],
-            "paging": { "pageIndex": 0, "pageSize": 10 },
+            "paging": { "pageIndex": 1, "pageSize": 10 },
         };
         $.ajax({
             type: "post",

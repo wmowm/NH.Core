@@ -5,11 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Mapp\Groups.hbm.xml" />
     <None Remove="Mapp\Users.hbm.xml" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Mapp\Groups.hbm.xml" />
     <EmbeddedResource Include="Mapp\Users.hbm.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tibos.Common\Tibos.Common.csproj" />
   </ItemGroup>
 
 </Project>

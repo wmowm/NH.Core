@@ -19,6 +19,8 @@ using Tibos.Common;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Configuration;
 using Tibos.ConfingModel;
+using System.Linq.Expressions;
+using NHibernate.Criterion.Lambda;
 
 namespace Tibos.Repository.Service
 {
@@ -44,33 +46,69 @@ namespace Tibos.Repository.Service
             }
         }
 
-        public static IList<T> GetCrit<T>(List<SearchTemplate> list, List<SortOrder> order, ICriteria crit)
+        public static IList<T> GetCrit<T>(RequestParams request, ICriteria crit)
         {
-            if (order == null)
+            if(request.Sort != null)
             {
-                crit.AddOrder(Order.Desc("id"));
-            }
-            else
-            {
-                foreach (var item in order)
+                foreach (var item in request.Sort)
                 {
                     if (item.searchType.ToString() == EnumBase.OrderType.Asc.ToString())
                     {
-                        crit.AddOrder(Order.Asc(item.value));
+                        crit.AddOrder(Order.Asc(item.key));
                     }
                     else
                     {
-                        crit.AddOrder(Order.Desc(item.value));
+                        crit.AddOrder(Order.Desc(item.key));
                     }
                 }
             }
-            if (list != null)
+            if (request.Params != null)
             {
-                crit = GetCrit(list, crit, 1);
+                crit = GetCrit(request.Params, crit);
+            }
+            if (request.Paging != null)
+            {
+                crit.SetFirstResult((request.Paging.pageIndex - 1) * request.Paging.pageSize);
+                crit.SetMaxResults(request.Paging.pageSize);
             }
             return crit.List<T>();
         }
 
+        public static IList<T> GetQueryOver<T>(IQueryOver<T, T> query, List<SortOrder<T>> expressionOrder, Pagination pagination)
+        {
+            if (expressionOrder != null)
+            {
+                for (int i = 0; i < expressionOrder.Count; i++)
+                {
+                    var model = expressionOrder[i];
+                    IQueryOverOrderBuilder<T, T> sort;
+                    if (i > 0)
+                    {
+                        sort = query.ThenBy(model.value);
+                    }
+                    else
+                    {
+                        sort = query.OrderBy(model.value);
+                    }
+                    if (model.searchType == EnumBase.OrderType.Asc)
+                    {
+                        query = sort.Asc;
+                    }
+                    else
+                    {
+                        query = sort.Desc;
+                    }
+                }
+            }
+            if (pagination != null)
+            {
+                query.Skip((pagination.pageIndex - 1) * pagination.pageSize);
+                query.Take(pagination.pageSize);
+            }
+            var list = query.List<T>();
+            return list;
+        }
+    
         /// <summary>
         /// 获取总条数
         /// </summary>
@@ -78,11 +116,11 @@ namespace Tibos.Repository.Service
         /// <param name="list"></param>
         /// <param name="crit"></param>
         /// <returns></returns>
-        public static int GetCrit<T>(List<SearchTemplate> list, ICriteria crit)
+        public static int GetCritCount<T>(RequestParams request, ICriteria crit)
         {
-            if (list != null)
+            if (request.Params != null)
             {
-                crit = GetCrit(list, crit, 2);
+                crit = GetCrit(request.Params, crit,IsGetCount:true);
             }
             return Convert.ToInt32(crit.SetProjection(Projections.RowCount()).UniqueResult());
         }
@@ -94,9 +132,9 @@ namespace Tibos.Repository.Service
         /// <param name="crit"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        private static ICriteria GetCrit(List<SearchTemplate> list, ICriteria crit, int type = 1)
+        private static ICriteria GetCrit(List<Params> para, ICriteria crit,bool IsGetCount= false)
         {
-            foreach (var item in list)
+            foreach (var item in para)
             {
                 if (item.value == null) continue;
                 if (item.value.GetType() == typeof(String))
@@ -158,14 +196,6 @@ namespace Tibos.Repository.Service
                     crit.Add(Restrictions.Not(Restrictions.In(item.key, (List<object>)item.value)));
                     continue;
                 }
-                if (item.searchType.ToString() == EnumBase.SearchType.Paging.ToString() && type == 1)
-                {
-                    int[] paging = (int[])item.value;
-                    crit.SetFirstResult((paging[0] - 1) * paging[1]);
-                    crit.SetMaxResults(paging[1]);
-                    continue;
-                }
-
                 if (item.searchType.ToString() == EnumBase.SearchType.Group.ToString())
                 {
                     crit.SetProjection(Projections.ProjectionList()

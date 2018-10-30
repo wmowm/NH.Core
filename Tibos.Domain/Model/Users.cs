@@ -233,5 +233,7 @@ namespace Tibos.Domain
             get;
             set;
         }
+
+        public virtual Groups Groups { get; set; }
     }
 }

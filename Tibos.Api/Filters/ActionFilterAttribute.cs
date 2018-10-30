@@ -54,9 +54,8 @@ namespace Tibos.Api.Filters
             #endregion
 
             #region 根据注解允许匿名访问
-            Type type = this.GetType();
             var actionDescriptor = context.ActionDescriptor as ControllerActionDescriptor;
-            var controllerAttributes = type.GetCustomAttributes(typeof(AlwaysAccessibleAttribute),true);
+            var controllerAttributes = actionDescriptor.MethodInfo.GetCustomAttributes(typeof(AlwaysAccessibleAttribute),true);
             if (controllerAttributes != null && controllerAttributes.Length > 0)
             {
                 return;
