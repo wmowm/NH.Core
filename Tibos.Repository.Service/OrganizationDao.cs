@@ -1,0 +1,160 @@
+﻿using NHibernate;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Tibos.Domain;
+using System.Linq.Expressions;
+using NHibernate.Criterion;
+using Tibos.Repository.Contract;
+using Tibos.Common;
+using NHibernate.Criterion.Lambda;
+
+//Nhibernate Code Generation Template 1.0
+//author:Tibos
+//blog:www.cnblogs.com/Tibos
+//Entity Code Generation Template
+namespace Tibos.Repository.Service
+{
+	public class OrganizationDao:IOrganization
+	{
+        private ISessionFactory sessionFactory = ManagerPage.SessionFactory;
+        #region  成员方法
+        /// <summary>
+        /// 是否存在该记录
+        /// </summary>
+        public virtual bool Exists(object id)
+        {
+            using (ISession session = sessionFactory.OpenSession())
+            {
+                return Get(id) != null;
+            }
+        }
+        /// <summary>
+        /// 增加一条数据
+        /// </summary>
+        public virtual object Save(Organization model)
+        {
+            using (ISession session = sessionFactory.OpenSession())
+            {
+                var id = session.Save(model);
+                session.Flush();
+                return id;
+            }
+        }
+        /// <summary>
+        /// 更新一条数据
+        /// </summary>
+        public virtual void Update(Organization model)
+        {
+            using (var session = sessionFactory.OpenSession())
+            {
+                session.SaveOrUpdate(model);
+                session.Flush();
+            }
+        }
+        /// <summary>
+        /// 删除数据
+        /// </summary>
+        public virtual void Delete(int id)
+        {
+            using (var session = sessionFactory.OpenSession())
+            {
+                var model = session.Load<Organization>(id);
+                session.Delete(model);
+                session.Flush();
+            }
+        }
+
+        /// <summary>
+        /// 删除数据
+        /// </summary>
+        public virtual void Delete(Organization model)
+        {
+            using (var session = sessionFactory.OpenSession())
+            {
+                session.Delete(model);
+
+                session.Flush();
+            }
+        }
+
+        /// <summary>
+        /// 得到一个对象实体
+        /// </summary>
+        public virtual Organization Get(object id)
+        {
+            using (ISession session = sessionFactory.OpenSession())
+            {
+                return session.Get<Organization>(id);
+            }
+        }
+
+
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        public virtual IList<Organization> LoadAll()
+        {
+            using (ISession session = sessionFactory.OpenSession())
+            {
+                return session.QueryOver<Organization>().List();
+            }
+        }
+
+        /// <summary>
+        /// 条件查询
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="user_name"></param>
+        /// <param name="mobile"></param>
+        /// <returns></returns>
+        public virtual IList<Organization> GetList(RequestParams request)
+        {
+            using (ISession session = sessionFactory.OpenSession())
+            {
+                ICriteria crit = session.CreateCriteria(typeof(Organization));
+                IList<Organization> list = ManagerPage.GetCrit<Organization>(request,crit);
+                return list;
+            }
+        }
+
+        /// <summary>
+        /// 条件查询
+        /// </summary>
+        /// <param name="expression"></param>
+        /// <param name="expressionOrder"></param>
+        /// <param name="pagination"></param>
+        /// <returns></returns>
+        public virtual IList<Organization> GetList(Expression<Func<Organization, bool>> expression, List<SortOrder<Organization>> expressionOrder, Pagination pagination)
+        {
+            using (ISession session = sessionFactory.OpenSession())
+            {
+                var query = session.QueryOver<Organization>().Where(expression);
+                IList<Organization> list = ManagerPage.GetQueryOver<Organization>(query, expressionOrder, pagination);
+                return list;
+            }
+        }
+
+        /// <summary>
+        /// 获取总条数
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="user_name"></param>
+        /// <param name="mobile"></param>
+        /// <returns></returns>
+        public virtual int GetCount(RequestParams request)
+        {
+            using (ISession session = sessionFactory.OpenSession())
+            {
+                ICriteria crit = session.CreateCriteria(typeof(Organization));
+                int count = ManagerPage.GetCritCount<Organization>(request, crit);
+                return count;
+            }
+        }
+
+		#endregion  成员方法
+	}
+}

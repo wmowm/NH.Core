@@ -21,3 +21,8 @@ obj
 /Tibos.Service.Contract/bin
 /Tibos.Web/obj
 /Tibos.Web/bin
+/.vs/NH.Core/DesignTimeBuild/.dtbcache
+/.vs/NH.Core/v15/Server/sqlite3/db.lock
+/.vs/NH.Core/v15/Server/sqlite3/storage.ide
+/.vs/NH.Core/v15/Server/sqlite3/storage.ide-shm
+/.vs/NH.Core/v15/Server/sqlite3/storage.ide-wal
