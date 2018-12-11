@@ -21,5 +21,6 @@ namespace Tibos.Api
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .Build();
+        
     }
 }

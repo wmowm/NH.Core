@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Dapper;
 using DotNetCore.CAP;
@@ -28,19 +29,26 @@ namespace Tibos.CAP.Controllers
         [Route("~/adonet/transaction")]
         public IActionResult AdonetWithTransaction()
         {
-            string ConnectionString = "Data Source=132.232.4.73;Initial Catalog=666;port=3306; User ID=root;Password=123456;SslMode = none;";
+            string ConnectionString = "Data Source=132.232.4.73;Initial Catalog=666;port=3307; User ID=root;Password=123456;SslMode = none;";
+
             using (var connection = new MySqlConnection(ConnectionString))
             {
-                using (var transaction = connection.BeginTransaction(_capBus,autoCommit:false))
+                int i = 0;
+                while (true)
                 {
-                    connection.Execute("insert into test(id) values(1)", transaction: (IDbTransaction)transaction.DbTransaction);
-                    //your business code
-                    Users user = new Users();
-                    user.address = "XX";
-                    _capBus.Publish("kkk.services.bar", user, "callback-show-execute-time");
-                    transaction.Commit();
-                    //transaction.Rollback();
+                    i++;
+                    using (var transaction = connection.BeginTransaction(_capBus, autoCommit: false))
+                    {
+                        connection.Execute($"insert into test(id) values({i})", transaction: (IDbTransaction)transaction.DbTransaction);
+                        //your business code
+                        Users user = new Users();
+                        user.Email = "XX";
+                        _capBus.Publish("tibos.services.bar", user, "callback-show-execute-time");
+                        transaction.Commit();
+                    }
+                    Thread.Sleep(1000);
                 }
+
             }
 
             return Ok();

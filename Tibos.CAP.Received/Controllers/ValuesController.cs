@@ -12,10 +12,10 @@ namespace Tibos.CAP.Received.Controllers
     public class ValuesController : Controller
     {
 
-        [CapSubscribe("kkk.services.bar")]
+        [CapSubscribe("tibos.services.bar")]
         public Users BarMessageProcessor(Users user)
         {
-            user.address = "tibos";
+            user.Email = "tibos";
             return user;
         }
 

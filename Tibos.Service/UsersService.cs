@@ -8,12 +8,16 @@ using Tibos.Repository.Contract;
 using Tibos.Service.Contract;
 using System.Linq.Expressions;
 
+
+//Nhibernate Code Generation Template 1.0
+//author:Tibos
+//blog:www.cnblogs.com/Tibos
+//Entity Code Generation Template
 namespace Tibos.Service
 {
-	public partial class UsersService:UsersIService
-    {
-
-        private readonly IUsers dao;
+	public class UsersService:UsersIService
+	{
+		private readonly IUsers dao;
         public UsersService(IUsers dao)
 		{
             this.dao = dao;
@@ -31,11 +35,20 @@ namespace Tibos.Service
         }
         public RequestParams GetWhere(UsersRequest request)
         {
+        	if (request == null) return null;
             RequestParams rp = new RequestParams();
             //追加查询参数
-            if (!string.IsNullOrEmpty(request.email))
+            if (!string.IsNullOrEmpty(request.Id))
             {
-                rp.Params.Add(new Params() { key = "email", value = request.email, searchType = EnumBase.SearchType.Eq });
+                rp.Params.Add(new Params() { key = "Id", value = request.Id, searchType = EnumBase.SearchType.Eq });
+            }
+            if (!string.IsNullOrEmpty(request.UserName))
+            {
+                rp.Params.Add(new Params() { key = "UserName", value = request.UserName, searchType = EnumBase.SearchType.Like });
+            }
+            if (!string.IsNullOrEmpty(request.Email))
+            {
+                rp.Params.Add(new Params() { key = "Email", value = request.Email, searchType = EnumBase.SearchType.Eq });
             }
             //添加排序(多个排序条件,可以额外添加)
             if (!string.IsNullOrEmpty(request.sortKey))
@@ -46,7 +59,6 @@ namespace Tibos.Service
             {
                 rp.Sort = null;
             }
-
             //添加分页
             if (request.pageIndex > 0)
             {
@@ -60,9 +72,13 @@ namespace Tibos.Service
             return rp;
         }
 
+        public IList<Users> GetList()
+        {
+            return dao.LoadAll();
+        }
 
         /// <summary>
-        /// 获取用户列表
+        /// 获取列表
         /// </summary>
         /// <returns></returns>
         public IList<Users> GetList(UsersRequest request) 
@@ -77,10 +93,8 @@ namespace Tibos.Service
         }
 
         /// <summary>
-        /// 获取当前条件下的用户总记录
+        /// 获取当前条件下的总记录
         /// </summary>
-        /// <param name="user_name"></param>
-        /// <param name="mobile"></param>
         /// <returns></returns>
         public int GetCount(UsersRequest request)
         {
@@ -89,23 +103,23 @@ namespace Tibos.Service
         }
 
         /// <summary>
-        /// 添加用户
+        /// 添加
         /// </summary>
         /// <param name="m_user"></param>
         /// <returns></returns>
-        public int Save(Users m_user) 
+        public string Save(Users model) 
         {
-            return Convert.ToInt32(dao.Save(m_user));
+             return dao.Save(model).ToString();
         }
 
         /// <summary>
-        /// 修改用户
+        /// 修改
         /// </summary>
         /// <param name="m_user"></param>
         /// <returns></returns>
-        public void Update(Users m_user) 
+        public void Update(Users model) 
         {
-            dao.Update(m_user);
+            dao.Update(model);
         }
 
         public void Delete(int id)
@@ -118,29 +132,7 @@ namespace Tibos.Service
             return dao.Exists(id);
         }
 		#endregion
-
-        #region 自定义
-
-        /// <summary>
-        /// 登录
-        /// </summary>
-        /// <param name="un"></param>
-        /// <param name="pwd"></param>
-        /// <returns></returns>
-        public Users Login(string un, string pwd)
-        {
-            List<SearchTemplate> st = new List<SearchTemplate>()
-            {
-                new SearchTemplate(){key="user_name",value=un,searchType=EnumBase.SearchType.Eq},
-                new SearchTemplate(){key="password",value=pwd,searchType=EnumBase.SearchType.Eq}
-            };
-            IList<Users> list = GetList(m => m.user_name == un && m.password == pwd, null, null);
-            if (list.Count > 0)
-            {
-                return list[0];
-            }
-            return null;
-        }
-        #endregion
-    }
+      
+   
+	}
 }

@@ -10,13 +10,14 @@ using Tibos.Repository.Contract;
 using Tibos.Common;
 using NHibernate.Criterion.Lambda;
 
+//Nhibernate Code Generation Template 1.0
+//author:Tibos
+//blog:www.cnblogs.com/Tibos
+//Entity Code Generation Template
 namespace Tibos.Repository.Service
 {
-    /// <summary>
-    /// 接口层D_Users
-    /// </summary>
-    public class UsersDao : IUsers
-    {
+	public class UsersDao:IUsers
+	{
         private ISessionFactory sessionFactory = ManagerPage.SessionFactory;
         #region  成员方法
         /// <summary>
@@ -59,8 +60,8 @@ namespace Tibos.Repository.Service
         {
             using (var session = sessionFactory.OpenSession())
             {
-                var customer = session.Load<Users>(id);
-                session.Delete(customer);
+                var model = session.Load<Users>(id);
+                session.Delete(model);
                 session.Flush();
             }
         }
@@ -155,7 +156,5 @@ namespace Tibos.Repository.Service
         }
 
 		#endregion  成员方法
-
-       
-	} 
+	}
 }

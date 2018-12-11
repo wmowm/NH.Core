@@ -4,39 +4,36 @@ using System.Linq.Expressions;
 using Tibos.Common;
 using Tibos.Domain;
 
+//Nhibernate Code Generation Template 1.0
+//author:Tibos
+//blog:www.cnblogs.com/Tibos
+//Entity Code Generation Template
 namespace Tibos.Service.Contract
 {
-    public interface UsersIService
-    {
-
-        #region 自定义
-
-
-
+	public interface UsersIService
+	{
+		#region 自定义
+		 
         Users Get(int id);
 
+        IList<Users> GetList();
+		
         IList<Users> GetList(UsersRequest request);
 
         IList<Users> GetList(Expression<Func<Users, bool>> expression, List<SortOrder<Users>> expressionOrder, Pagination pagination);
 
         int GetCount(UsersRequest request);
 
-        int Save(Users m_user);
+        string Save(Users model);
 
-        void Update(Users m_user);
+        void Update(Users model);
 
 
         void Delete(int id);
 
         bool Exists(int id);
-
-        /// <summary>
-        /// 登录
-        /// </summary>
-        /// <param name="un"></param>
-        /// <param name="pwd"></param>
-        /// <returns></returns>
-        Users Login(string un, string pwd);
         #endregion
-    }
+     
+   
+	}
 }

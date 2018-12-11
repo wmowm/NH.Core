@@ -21,13 +21,13 @@ namespace Tibos.Api.Filters
         
         private readonly ILogger<ActionFilterAttribute> logger;
         private readonly IMemoryCache _Cache;
-        private readonly UsersIService _UsersService;
+        private readonly ManagerIService _ManagerService;
         private readonly Token _Token;
-        public ActionFilterAttribute(ILoggerFactory loggerFactory, IMemoryCache memoryCache, UsersIService userService)
+        public ActionFilterAttribute(ILoggerFactory loggerFactory, IMemoryCache memoryCache, ManagerIService Managerervice)
         {
             logger = loggerFactory.CreateLogger<ActionFilterAttribute>();
             _Cache = memoryCache;
-            _UsersService = userService;
+            _ManagerService = Managerervice;
             _Token = new Token(_Cache);
         }
 

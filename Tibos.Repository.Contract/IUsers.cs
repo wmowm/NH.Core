@@ -6,11 +6,13 @@ using Tibos.Domain;
 using System.Linq.Expressions;
 using Tibos.Common;
 
+//Nhibernate Code Generation Template 1.0
+//author:Tibos
+//blog:www.cnblogs.com/Tibos
+//Entity Code Generation Template
 namespace Tibos.Repository.Contract
 {
-	/// <summary>
-	/// 接口层D_Users
-	/// </summary>
+	 	//Users
 	public interface IUsers
 	{
 		#region  成员方法
@@ -62,5 +64,7 @@ namespace Tibos.Repository.Contract
         
 
 		#endregion  成员方法
-	} 
+      	
+   
+	}
 }

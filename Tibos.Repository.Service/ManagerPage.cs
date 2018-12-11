@@ -48,7 +48,8 @@ namespace Tibos.Repository.Service
 
         public static IList<T> GetCrit<T>(RequestParams request, ICriteria crit)
         {
-            if(request.Sort != null)
+            if (request == null) return crit.List<T>();
+            if (request.Sort != null)
             {
                 foreach (var item in request.Sort)
                 {
@@ -117,7 +118,8 @@ namespace Tibos.Repository.Service
         /// <param name="crit"></param>
         /// <returns></returns>
         public static int GetCritCount<T>(RequestParams request, ICriteria crit)
-        {
+        { 
+            if(request == null) Convert.ToInt32(crit.SetProjection(Projections.RowCount()).UniqueResult());
             if (request.Params != null)
             {
                 crit = GetCrit(request.Params, crit,IsGetCount:true);

@@ -11,7 +11,8 @@ namespace Tibos.Confing.automapper
     {
         public MappingProfile()
         {
-            CreateMap<Users,UsersDto>();
+            CreateMap<Manager, ManagerDto>();
+            CreateMap<Dict, DictDto>();
         }
     }
 }

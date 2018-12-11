@@ -30,7 +30,7 @@ namespace Tibos.Api.Areas.User.Controllers
         private IMemoryCache _Cache;
 
         //属性注入
-        public UsersIService _UsersService { get; set; }
+        public ManagerIService _ManagerService { get; set; }
 
 
         //构造函数注入
@@ -46,13 +46,13 @@ namespace Tibos.Api.Areas.User.Controllers
             return await Task.Run<JsonResult>(() =>
             {
                 Common.Json json = new Common.Json();
-                var model = _UsersService.Get(id);
+                var model = _ManagerService.Get(id);
                 json.data = model;
                 return Json(json);
             });
         }
 
-        [Route("gettoken"),HttpGet]
+        [Route("gettoken"), HttpGet]
         public async Task<JsonResult> GetToken(string user_name, string password)
         {
             return await Task.Run<JsonResult>(() =>
@@ -77,7 +77,7 @@ namespace Tibos.Api.Areas.User.Controllers
                 List<SearchTemplate> st = new List<SearchTemplate>();
                 st.Add(new SearchTemplate() { key = "user_name", value = user_name, searchType = EnumBase.SearchType.Eq });
                 st.Add(new SearchTemplate() { key = "password", value = password, searchType = EnumBase.SearchType.Eq });
-                var list = _UsersService.GetList(m=>m.user_name == user_name && m.password == password,null,null);
+                var list = _ManagerService.GetList(m => m.UserName == user_name && m.Password == password, null, null);
                 if (list.Count > 0)
                 {
                     //获取token
@@ -89,7 +89,7 @@ namespace Tibos.Api.Areas.User.Controllers
                     _Cache.GetOrCreate(token, entry =>
                     {
                         entry.SetSlidingExpiration(TimeSpan.FromSeconds(15 * 60)); //15分钟
-                        return (list[0].id);
+                        return (list[0].Id);
                     });
                     //var result = _Cache.Get(token);
                     json.msg = "登录成功!";
@@ -117,32 +117,36 @@ namespace Tibos.Api.Areas.User.Controllers
 
         [AlwaysAccessible]
         [Route("getlist"), HttpPost]
-        public async Task<JsonResult> GetList(UsersRequest request)
+        public async Task<JsonResult> GetList(ManagerRequest request)
         {
             return await Task.Run<JsonResult>(() =>
             {
                 Json json = new Common.Json();
-                var list = _UsersService.GetList(request);
-                var list_count = _UsersService.GetCount(request);
+                var list = _ManagerService.GetList(request);
+                var list_count = _ManagerService.GetCount(request);
                 json.data = list;
                 json.total = list_count;
+
+
+
+
                 return Json(json);
             });
         }
 
         [HttpPost]
-        public async Task<JsonResult> Add(Users user)
+        public async Task<JsonResult> Add(Manager user)
         {
             return await Task.Run<JsonResult>(() =>
             {
                 Json json = new Common.Json();
-                if (string.IsNullOrEmpty(user.user_name))
+                if (string.IsNullOrEmpty(user.UserName))
                 {
                     json.msg = "用户名不能为空!";
                     json.status = -1;
                     return Json(json);
                 }
-                var id = _UsersService.Save(user);
+                var id = _ManagerService.Save(user);
                 json.data = id;
                 json.msg = "添加成功!";
                 return Json(json);
@@ -150,31 +154,13 @@ namespace Tibos.Api.Areas.User.Controllers
         }
 
         [HttpPut]
-        public async Task<JsonResult> Edit(Users user)
+        public async Task<JsonResult> Edit(Manager user)
         {
             return await Task.Run<JsonResult>(() =>
             {
                 Json json = new Common.Json();
-                _UsersService.Update(user);
+                _ManagerService.Update(user);
                 json.msg = "修改成功!";
-                return Json(json);
-            });
-        }
-
-        [HttpDelete]
-        public async Task<JsonResult> Delete(string ids)
-        {
-            return await Task.Run<JsonResult>(() =>
-            {
-                //自定义返回json对象
-                Json json = new Json();
-                foreach (var id in ids.Split(new char[] { ',' }))
-                {
-                    var m_nt = _UsersService.Get(Convert.ToInt32(id));
-                    m_nt.is_del = 1;
-                    _UsersService.Update(m_nt);
-                }
-                json.msg = "成功删除" + ids.Split(new char[] { ',' }).Length + "条记录!";
                 return Json(json);
             });
         }

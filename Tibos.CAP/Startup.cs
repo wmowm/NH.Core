@@ -23,15 +23,8 @@ namespace Tibos.CAP
         {
             services.AddCap(x =>
             {
-                x.UseMySql("Data Source=132.232.4.73;Initial Catalog=666;port=3306; User ID=root;Password=123456;SslMode = none;");
-                x.UseRabbitMQ("localhost");
-                //x.UseRabbitMQ(m =>
-                //{
-                //    m.HostName = "132.232.4.73:15672";
-                //    m.Port = 15672;
-                //    m.UserName = "guest";
-                //    m.Password = "guest";
-                //});
+                x.UseMySql("Data Source=132.232.4.73;Initial Catalog=666;port=3307; User ID=root;Password=123456;SslMode = none;");
+                x.UseKafka("132.232.4.73:9092");
             });
 
             services.AddMvc();
