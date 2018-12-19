@@ -28,9 +28,6 @@
     <None Update="config\nlog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="data\nhcrm.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="json\TokenConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

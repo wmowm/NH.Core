@@ -223,7 +223,7 @@ var setting = {
                     var layer = layui.layer;
                     layer.open({
                         type: 2,
-                        area: ['800px', '600px'],
+                        area: ['800px', '650px'],
                         fixed: false, //不固定
                         maxmin: true,
                         content: '/sys/navigation/create' + url,
@@ -304,11 +304,16 @@ var setting = {
                     , { field: 'Areas', minWidth: 80, title: '模块' }
                     , { field: 'ControllerName', minWidth: 80, title: '控制器' }
                     , { title: '系统菜单', width: 100, templet: '#IsSys' }
-                    , { title: '权限', width: 480, templet: '#testTpl' }
+                    , { title: '菜单权限', width: 480, templet: '#Dict' }
                 ]]
             });
         });
     });
+
+    for (var i = 0; i < length; i++) {
+
+    }
+
 </script>
 
 <script type="text/html" id="Name">
@@ -333,5 +338,16 @@ var setting = {
     <span class="layui-badge">√</span>
     {{#  } else { }}
     <span class="layui-badge layui-bg-gray">×</span>
+    {{#  } }}
+</script>
+
+<script type="text/html" id="Dict">
+    {{#  for (var i = 0; i < d.DictList.length; i++) { }}
+    {{d.DictList[i].Name}}:
+    {{#  if(d.DictList[i].Status == 1){ }}
+    <span class="layui-badge">√</span>
+    {{#  } else { }}
+    <span class="layui-badge layui-bg-gray">×</span>
+    {{#  } }}
     {{#  } }}
 </script>

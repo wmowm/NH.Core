@@ -40,6 +40,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tibos.ConfingModel", "Tibos.ConfingModel\Tibos.ConfingModel.csproj", "{29E708AB-A68B-419E-8640-026367C0BA7C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09测试", "09测试", "{10278CAB-48C6-49B9-BA57-D302EB155BE0}"
+	ProjectSection(SolutionItems) = preProject
+		Docker.txt = Docker.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Docker", "Test.Docker\Test.Docker.csproj", "{7E226C19-60FA-4302-9599-0EB50E822A9A}"
 EndProject

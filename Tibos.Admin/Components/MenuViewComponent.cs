@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Tibos.Domain;
 using Tibos.Service.Contract;
 
 namespace Tibos.Admin.Components
@@ -18,7 +19,10 @@ namespace Tibos.Admin.Components
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var list = _navigationIService.GetList();
+            NavigationRequest request = new NavigationRequest();
+            request.sortKey = "Sort";
+            request.sortType = 0;
+            var list = _navigationIService.GetList(request);
             return View(list);
         }
     }

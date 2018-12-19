@@ -57,9 +57,16 @@ namespace Tibos.Domain
         {
             get; 
             set; 
-        }        
-		   
-	}
+        }
+        /// <summary>
+        /// 额外字段
+        /// </summary>
+        public virtual string Extra
+        {
+            get;
+            set;
+        }
+    }
 	public class DictRequest : Dict
     {
         /// <summary>

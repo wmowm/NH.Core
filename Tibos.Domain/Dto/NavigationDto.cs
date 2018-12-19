@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 //Nhibernate Code Generation Template 1.0
 //author:Tibos
@@ -89,9 +90,14 @@ namespace Tibos.Domain
         {
             get; 
             set; 
-        }        
-		   
-	}
+        }
+
+        public virtual List<DictDto> DictList
+        {
+            get;
+            set;
+        }
+    }
 	public class NavigationRequest : Navigation
     {
         /// <summary>

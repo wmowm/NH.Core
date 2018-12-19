@@ -41,7 +41,6 @@
 
             <div class="layui-card-body">
                 <div style="padding-bottom: 10px;">
-                    <button class="layui-btn layuiadmin-btn-useradmin" data-type="batchdel">删除</button>
                     <button id="add" class="layui-btn layuiadmin-btn-useradmin" data-type="add">添加</button>
                 </div>
                 <table class="layui-hide" id="tableList" lay-filter="tableList"></table>
@@ -67,7 +66,9 @@
                             , method: 'post'
                             , title: '用户数据表'
                             , cols: [[ //表头
-                                , { field: 'Name', title: '角色名', minWidth: 80, fixed: 'left' }
+                                 { field: 'Name', title: '角色名', width: 200 }
+                                , { field: 'Description', title: '描述', minWidth: 500 }
+                                , { fixed: 'right', templet: '#Operating', minWidth: 210, align: 'center', title: '操作' }
                             ]]
                             , id: 'tableList'
                             , limit: 20
@@ -153,21 +154,46 @@
                         //监听行工具事件
                         table.on('tool(tableList)', function (obj) {
                             var data = obj.data;
-                            //console.log(obj)
                             if (obj.event === 'del') {
-                                layer.confirm('真的删除行么', function (index) {
-                                    obj.del();
-                                    layer.close(index);
+                                layer.confirm('确定删除么?', function (index) {
+                                    var url = "/sys/role/del";
+
+                                    var field = { Id: data.Id };
+                                    $.post(url, field, function (data) {
+                                        if (data.code == 200) {
+                                            layui.table.reload('tableList'); //重载表格
+                                            layer.msg("操作成功!", {
+                                                time: 1000,
+                                                icon: 1,
+                                            });
+                                        } else {
+                                            layer.msg("操作失败!", {
+                                                time: 1000,
+                                                icon: 2,
+                                            });
+
+                                        }
+                                    })
                                 });
                             } else if (obj.event === 'edit') {
-                                layer.prompt({
-                                    formType: 2
-                                    , value: data.email
-                                }, function (value, index) {
-                                    obj.update({
-                                        email: value
+                                var url = "?Id=" + data.Id;
+                                layui.use('layer', function () {
+                                    var layer = layui.layer;
+                                    layer.open({
+                                        type: 2,
+                                        area: ['800px', '650px'],
+                                        fixed: false, //不固定
+                                        maxmin: true,
+                                        content: '/sys/role/edit' + url,
+                                        title: '编辑',
+                                        btn: ['确定', '取消'],
+                                        yes: function (index, layero) {
+                                            $("#form").length;//直接获取表单长度=0
+                                            $(layero).find("#form").length;//表单长度还是等于0
+                                            var submit = layero.find('iframe').contents().find("#layuiadmin-app-form-edit");
+                                            submit.click();
+                                        }
                                     });
-                                    layer.close(index);
                                 });
                             }
                         });
@@ -185,12 +211,10 @@
 
                 </script>
 
-                <script type="text/html" id="testTpl">
-                    {{#  if(d.Status % 2 === 0){ }}
-                    <span style="color: #F581B1;">{{ d.UserName }}</span>
-                    {{#  } else { }}
-                    {{ d.UserName }}
-                    {{#  } }}
+                <script type="text/html" id="Operating">
+                    <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon"></i>编辑</a>
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon"></i>删除</a>
+
                 </script>
 
             </div>

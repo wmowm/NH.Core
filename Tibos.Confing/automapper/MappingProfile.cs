@@ -13,6 +13,8 @@ namespace Tibos.Confing.automapper
         {
             CreateMap<Manager, ManagerDto>();
             CreateMap<Dict, DictDto>();
+            CreateMap<Navigation, NavigationDto>();
+            CreateMap<Role, RoleDto>();
         }
     }
 }

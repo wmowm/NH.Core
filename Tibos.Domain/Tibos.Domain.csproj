@@ -10,9 +10,11 @@
     <None Remove="Mapp\lwz0nflo.2kq~" />
     <None Remove="Mapp\Manager.hbm.xml" />
     <None Remove="Mapp\Navigation.hbm.xml" />
+    <None Remove="Mapp\NavigationRole.hbm.xml" />
     <None Remove="Mapp\Organization.hbm.xml" />
     <None Remove="Mapp\Position.hbm.xml" />
     <None Remove="Mapp\Role.hbm.xml" />
+    <None Remove="Mapp\RoleNavDict.hbm.xml" />
     <None Remove="Mapp\Users.hbm.xml" />
   </ItemGroup>
 
@@ -21,9 +23,11 @@
     <EmbeddedResource Include="Mapp\DictType.hbm.xml" />
     <EmbeddedResource Include="Mapp\Manager.hbm.xml" />
     <EmbeddedResource Include="Mapp\Navigation.hbm.xml" />
+    <EmbeddedResource Include="Mapp\NavigationRole.hbm.xml" />
     <EmbeddedResource Include="Mapp\Organization.hbm.xml" />
     <EmbeddedResource Include="Mapp\Position.hbm.xml" />
     <EmbeddedResource Include="Mapp\Role.hbm.xml" />
+    <EmbeddedResource Include="Mapp\RoleNavDict.hbm.xml" />
     <EmbeddedResource Include="Mapp\Users.hbm.xml" />
   </ItemGroup>
 

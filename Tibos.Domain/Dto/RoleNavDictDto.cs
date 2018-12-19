@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 //Nhibernate Code Generation Template 1.0
 //author:Tibos
@@ -7,12 +6,12 @@ using System.Collections.Generic;
 //Entity Code Generation Template
 namespace Tibos.Domain
 {
-	 	//Role
-	public class RoleDto
+	 	//RoleNavDict
+	public class RoleNavDictDto
 	{
 	
       	/// <summary>
-		/// 主键编号
+		/// 编号
         /// </summary>
         public virtual string Id
         {
@@ -20,29 +19,40 @@ namespace Tibos.Domain
             set; 
         }        
 		/// <summary>
-		/// 名称
+		/// 角色编号
         /// </summary>
-        public virtual string Name
+        public virtual string RId
         {
             get; 
             set; 
-        }
-        /// <summary>
-        /// 描述
+        }        
+		/// <summary>
+		/// 菜单编号
         /// </summary>
-        public virtual string Description
+        public virtual string NId
         {
-            get;
-            set;
-        }
-
-        public virtual List<RoleNavDict> RoleNavDict
+            get; 
+            set; 
+        }        
+		/// <summary>
+		/// 字典编号
+        /// </summary>
+        public virtual string DId
         {
-            get;
-            set;
-        }
-    }
-	public class RoleRequest : Role
+            get; 
+            set; 
+        }        
+		/// <summary>
+		/// 状态
+        /// </summary>
+        public virtual int? Status
+        {
+            get; 
+            set; 
+        }        
+		   
+	}
+	public class RoleNavDictRequest : RoleNavDict
     {
         /// <summary>
         /// 页码
