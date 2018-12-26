@@ -32,7 +32,7 @@ namespace Tibos.Repository.Contract
 		/// <summary>
 		/// 删除数据
 		/// </summary>
-		void Delete(int id);
+		void Delete(string id);
 		/// <summary>
 		/// 删除数据
 		/// </summary>

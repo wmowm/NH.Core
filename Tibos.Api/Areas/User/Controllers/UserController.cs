@@ -41,7 +41,7 @@ namespace Tibos.Api.Areas.User.Controllers
 
         [AlwaysAccessibleAttribute]
         [HttpGet]
-        public async Task<JsonResult> Get(int id)
+        public async Task<JsonResult> Get(string id)
         {
             return await Task.Run<JsonResult>(() =>
             {

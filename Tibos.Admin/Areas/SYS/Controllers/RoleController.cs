@@ -154,6 +154,12 @@ namespace Tibos.Admin.Areas.SYS.Controllers
         [HttpPost]
         public JsonResult Del(string Id)
         {
+            //删除该角色所有的权限
+            var list_rnd = _RoleNavDictIService.GetList(m => m.RId == Id, null, null);
+            foreach (var item in list_rnd)
+            {
+                _RoleNavDictIService.Delete(item.Id);
+            }
             _RoleIService.Delete(Id);
             Json reponse = new Json();
             reponse.code = 200;

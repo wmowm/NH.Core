@@ -29,7 +29,7 @@ namespace Tibos.Service
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Manager Get(int id) 
+        public Manager Get(string id) 
         {
             return dao.Get(id);
         }
@@ -38,11 +38,19 @@ namespace Tibos.Service
             if (request == null) return null;
             RequestParams rp = new RequestParams();
             //追加查询参数
-            //if (!string.IsNullOrEmpty(request.email))
-            //{
-            //    rp.Params.Add(new Params() { key = "email", value = request.email, searchType = EnumBase.SearchType.Eq });
-            //}
-            //添加排序(多个排序条件,可以额外添加)
+            if (!string.IsNullOrEmpty(request.Email))
+            {
+                rp.Params.Add(new Params() { key = "Email", value = request.Email, searchType = EnumBase.SearchType.Like });
+            }
+            if (!string.IsNullOrEmpty(request.UserName))
+            {
+                rp.Params.Add(new Params() { key = "UserName", value = request.UserName, searchType = EnumBase.SearchType.Like });
+            }
+            if (!string.IsNullOrEmpty(request.Mobile))
+            {
+                rp.Params.Add(new Params() { key = "Mobile", value = request.Mobile , searchType = EnumBase.SearchType.Like });
+            }
+            //添加排序(多个排序条件, 可以额外添加)
             //if (!string.IsNullOrEmpty(request.sortKey))
             //{
             //    rp.Sort.Add(new Sort() { key = request.sortKey, searchType = (EnumBase.OrderType)request.sortType });
@@ -111,12 +119,12 @@ namespace Tibos.Service
             dao.Update(model);
         }
 
-        public void Delete(int id)
+        public void Delete(string id)
         {
             dao.Delete(id);
         }
 
-        public bool Exists(int id) 
+        public bool Exists(string id) 
         {
             return dao.Exists(id);
         }

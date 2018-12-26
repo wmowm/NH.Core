@@ -12,6 +12,6 @@
 		<property name="Status" column="Status" type="int"  />
 		<property name="LoginTime" column="LoginTime" type="DateTime"  />
 		<property name="LoginIp" column="LoginIp" type="string"  />
-				
+    <property name="RoleId" column="RoleId" type="string"  />
 	</class>
 </hibernate-mapping>

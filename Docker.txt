@@ -13,6 +13,9 @@ docker inspect [id]
 --nginx
 ps -ef|grep nginx
 kill -QUIT 2072
+
+/usr/sbin/nginx -c /etc/nginx/nginx.conf
+
 nginx -t
 nginx
 nginx -s reload

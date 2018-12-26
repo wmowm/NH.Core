@@ -37,6 +37,21 @@
     <Content Update="Areas\CMS\Views\News\_CreateOrEdit.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Areas\SYS\Views\Manager\Create.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\SYS\Views\Manager\Detail.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\SYS\Views\Manager\Edit.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\SYS\Views\Manager\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\SYS\Views\Manager\_CreateOrEdit.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Areas\SYS\Views\DictType\Create.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

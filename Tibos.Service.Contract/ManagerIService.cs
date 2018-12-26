@@ -14,7 +14,7 @@ namespace Tibos.Service.Contract
 	{
 		#region 自定义
 		 
-        Manager Get(int id);
+        Manager Get(string id);
 
         IList<Manager> GetList(ManagerRequest request);
 
@@ -27,9 +27,9 @@ namespace Tibos.Service.Contract
         void Update(Manager model);
 
 
-        void Delete(int id);
+        void Delete(string id);
 
-        bool Exists(int id);
+        bool Exists(string id);
         #endregion
      
    

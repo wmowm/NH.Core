@@ -38,19 +38,19 @@ namespace Tibos.Service
             if (request == null) return null;
             RequestParams rp = new RequestParams();
             //追加查询参数
-            //if (!string.IsNullOrEmpty(request.email))
-            //{
-            //    rp.Params.Add(new Params() { key = "email", value = request.email, searchType = EnumBase.SearchType.Eq });
-            //}
+            if (!string.IsNullOrEmpty(request.Name))
+            {
+                rp.Params.Add(new Params() { key = "Name", value = request.Name, searchType = EnumBase.SearchType.Like });
+            }
             //添加排序(多个排序条件,可以额外添加)
-            //if (!string.IsNullOrEmpty(request.sortKey))
-            //{
-            //    rp.Sort.Add(new Sort() { key = request.sortKey, searchType = (EnumBase.OrderType)request.sortType });
-            //}
-            //else
-            //{
-            //    rp.Sort = null;
-            //}
+            if (!string.IsNullOrEmpty(request.sortKey))
+            {
+                rp.Sort.Add(new Sort() { key = request.sortKey, searchType = (EnumBase.OrderType)request.sortType });
+            }
+            else
+            {
+                rp.Sort = null;
+            }
 
             //添加分页
             if (request.pageIndex > 0)

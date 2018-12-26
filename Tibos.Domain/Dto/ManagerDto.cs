@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 //Nhibernate Code Generation Template 1.0
 //author:Tibos
@@ -73,9 +74,25 @@ namespace Tibos.Domain
         {
             get; 
             set; 
-        }        
-		   
-	}
+        }
+
+        private IList<Role> _roles;
+        /// <summary>
+        /// 角色列表
+        /// </summary>
+        public virtual IList<Role> Roles
+        {
+            set
+            {
+                _roles = value;
+            }
+            get
+            {
+                if (_roles == null) return new List<Role>();
+                return _roles;
+            }
+        }
+    }
 	public class ManagerRequest : Manager
     {
         /// <summary>

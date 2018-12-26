@@ -56,7 +56,7 @@ namespace Tibos.Repository.Service
         /// <summary>
         /// 删除数据
         /// </summary>
-        public virtual void Delete(int id)
+        public virtual void Delete(string id)
         {
             using (var session = sessionFactory.OpenSession())
             {
