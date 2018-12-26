@@ -10,6 +10,8 @@ docker stop [id]
 docker exec -it [id] /bin/bash
 docker inspect [id]
 
+
+
 --nginx
 ps -ef|grep nginx
 kill -QUIT 2072
