@@ -11,6 +11,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
+      "launchUrl": "http://localhost:8540",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -18,7 +19,8 @@
     "Tibos.Admin": {
       "commandName": "Project",
       "launchBrowser": false,
-      "applicationUrl": "http://localhost:5000",
+      "launchUrl": "home/index",
+      "applicationUrl": "http://localhost:8540/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
